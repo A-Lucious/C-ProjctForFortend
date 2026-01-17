@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lucious/Code/C++/SchoolWork/Template
+CMAKE_SOURCE_DIR = /home/lucious/Code/StorageRoom/Template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lucious/Code/C++/SchoolWork/Template/build
+CMAKE_BINARY_DIR = /home/lucious/Code/StorageRoom/Template/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -88,14 +88,14 @@ clean: CMakeFiles/HelloWorld.dir/clean
 CMakeFiles/MyPrivLib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyPrivLib.dir/build.make CMakeFiles/MyPrivLib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyPrivLib.dir/build.make CMakeFiles/MyPrivLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target MyPrivLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target MyPrivLib"
 .PHONY : CMakeFiles/MyPrivLib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyPrivLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/StorageRoom/Template/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MyPrivLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/StorageRoom/Template/build/CMakeFiles 0
 .PHONY : CMakeFiles/MyPrivLib.dir/rule
 
 # Convenience name for target.
@@ -105,7 +105,7 @@ MyPrivLib: CMakeFiles/MyPrivLib.dir/rule
 # codegen rule for target.
 CMakeFiles/MyPrivLib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyPrivLib.dir/build.make CMakeFiles/MyPrivLib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=3,4,5,6,7 "Finished codegen for target MyPrivLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=3,4,5,6,7 "Finished codegen for target MyPrivLib"
 .PHONY : CMakeFiles/MyPrivLib.dir/codegen
 
 # clean rule for target.
@@ -120,14 +120,14 @@ CMakeFiles/MyPrivLib.dir/clean:
 CMakeFiles/HelloWorld.dir/all: CMakeFiles/MyPrivLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=1,2 "Built target HelloWorld"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=1,2 "Built target HelloWorld"
 .PHONY : CMakeFiles/HelloWorld.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/HelloWorld.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/StorageRoom/Template/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/HelloWorld.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucious/Code/StorageRoom/Template/build/CMakeFiles 0
 .PHONY : CMakeFiles/HelloWorld.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ HelloWorld: CMakeFiles/HelloWorld.dir/rule
 # codegen rule for target.
 CMakeFiles/HelloWorld.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=1,2 "Finished codegen for target HelloWorld"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=1,2 "Finished codegen for target HelloWorld"
 .PHONY : CMakeFiles/HelloWorld.dir/codegen
 
 # clean rule for target.

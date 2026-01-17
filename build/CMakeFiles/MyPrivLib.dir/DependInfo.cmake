@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o.d"
-  "/home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o.d"
-  "/home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o.d"
-  "/home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o.d"
+  "/home/lucious/Code/StorageRoom/Template/src/lib/college.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o.d"
+  "/home/lucious/Code/StorageRoom/Template/src/lib/course.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o.d"
+  "/home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o.d"
+  "/home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp" "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o" "gcc" "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -108,15 +108,15 @@
                             <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
                                 <div class="dropdown-item"
                                     @click="selectType('netid', 'netID')">
-                                    SearchNetID
+                                    NetID
                                 </div>
                                 <div class="dropdown-item" 
                                     @click="selectType('studeent_name', 'StudentName')">
-                                    SearchStudentName
+                                    StudentName
                                 </div>
                                 <div class="dropdown-item" 
                                     @click="selectType('student_number', 'StudentNumber')">
-                                    SearchCourseID
+                                    CourseID
                                 </div>
                             </div>
                         </div>
@@ -127,14 +127,31 @@
                             <div class="info-card">
                                     <div class="info-item">Student</div>
                             </div>
+
+                            <div class="centerbar">
+                                <p v-if="studentlist.length === 0">Loading or none...</p>
+                            </div>
+
+                            <div v-for="item in studentlist" :key="item.id" class="info-card">
+                                <div class="info-item">
+                                    <strong>StudentNumber: </strong>
+                                    <span 
+                                        @click="stuisOpen = !stuisOpen" 
+                                        style="cursor: pointer; color: blue; text-decoration: underline;"
+                                    >
+                                        {{ item.stunum }}
+                                    </span>
+                                </div>
+                                <div class="info-item"><strong>Name: </strong>{{ item.name }}</div>
+                                <div class="info-item"><strong>Enroll Date: </strong>{{ item.erldt }}</div>
+                                <div class="info-item"><strong>Graduation Date: </strong>{{ item.gdtdt }}</div>
+                            </div>
                         </div>
-                        <div class="swap" :class="{ 'swap-open': isOpen }"></div>
+                        <div class="swap" :class="{ 'swap-open': stuisOpen }"></div>
                     </div>
 
 
                 </div>
-
-                <div id="chart-main"></div>
 
             </main>
 

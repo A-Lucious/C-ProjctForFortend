@@ -68,22 +68,22 @@
 			[
 				{
 					"backtrace" : 3,
-					"define" : "PROJECT_ROOT_DIR=\"/home/lucious/Code/C++/SchoolWork/Template\""
+					"define" : "PROJECT_ROOT_DIR=\"/home/lucious/Code/StorageRoom/Template\""
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/lucious/Code/C++/SchoolWork/Template/src/lib"
+					"path" : "/home/lucious/Code/StorageRoom/Template/src/lib"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/lucious/Code/C++/SchoolWork/Template/include"
+					"path" : "/home/lucious/Code/StorageRoom/Template/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include"
+					"path" : "/home/lucious/Code/StorageRoom/Template/include/json/single_include"
 				}
 			],
 			"language" : "CXX",

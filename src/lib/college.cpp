@@ -4,6 +4,7 @@ College::College() {
     std::cout << "Init the college,,," <<std::endl;
     std::string dict = "./Example/";
     ImportCourses((dict + "courses.json"));
+    ImportStudents((dict + "students.json"));
 }
 College::~College() {};
 
@@ -43,10 +44,30 @@ void College::ImportCourses(const std::string& path) { //import courses json fro
     }
 }
 
+void College::ImportStudents(const std::string& path) {
+    nlohmann::json students = read_json_from_path(path);
+    if (students.empty()) {
+        std::cout << "The Students Json is empty" << std::endl;
+    }
+    for(auto& [key,value] : students.items()) {
+        Student newStudent(value);
+        StudentRoll[value["stunum"]] = newStudent;
+        std::cout << "Import the Students success" << std::endl;
+    }
+}
+
 nlohmann::json College::ExportCourses_jsonsimple() { 
     nlohmann::json nj;
     for (auto& c:Courses) {
         nj[c.first] = c.second.ExportCourse_to_simplejson();
+    }
+    return nj;
+}
+
+nlohmann::json College::ExportStudents_jsonsimple() {
+    nlohmann::json nj;
+    for(auto& c:StudentRoll) {
+        nj[c.first] = c.second.ExportStudent_to_simplejson();
     }
     return nj;
 }

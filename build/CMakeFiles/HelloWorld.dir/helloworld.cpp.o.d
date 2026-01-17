@@ -1,5 +1,5 @@
 CMakeFiles/HelloWorld.dir/helloworld.cpp.o: \
-  /home/lucious/Code/C++/SchoolWork/Template/helloworld.cpp \
+  /home/lucious/Code/StorageRoom/Template/helloworld.cpp \
   /usr/local/include/crow.h /usr/local/include/crow/query_string.h \
   /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
   /usr/include/features.h /usr/include/features-time64.h \
@@ -765,7 +765,7 @@ CMakeFiles/HelloWorld.dir/helloworld.cpp.o: \
   /usr/local/include/crow/http_connection.h \
   /usr/local/include/crow/http_server.h \
   /usr/local/include/crow/version.h /usr/local/include/crow/app.h \
-  /home/lucious/Code/C++/SchoolWork/Template/include/json/single_include/nlohmann/json.hpp \
+  /home/lucious/Code/StorageRoom/Template/include/json/single_include/nlohmann/json.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/forward_list \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/forward_list.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/forward_list.tcc \
@@ -779,13 +779,13 @@ CMakeFiles/HelloWorld.dir/helloworld.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/gslice_array.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/mask_array.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/indirect_array.h \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/college.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/list \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_list.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/list.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/set \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_set.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_multiset.h \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.h \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.h \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.h
+  /home/lucious/Code/StorageRoom/Template/src/lib/mankind.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/course.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/functions.h

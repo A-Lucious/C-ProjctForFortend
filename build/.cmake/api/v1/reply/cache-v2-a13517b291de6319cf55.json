@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lucious/Code/C++/SchoolWork/Template/build"
+			"value" : "/home/lucious/Code/StorageRoom/Template/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -587,7 +587,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/lucious/Code/StorageRoom/Template/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lucious/Code/C++/SchoolWork/Template"
+			"value" : "/home/lucious/Code/StorageRoom/Template"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1235,7 +1235,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucious/Code/C++/SchoolWork/Template/build"
+			"value" : "/home/lucious/Code/StorageRoom/Template/build"
 		},
 		{
 			"name" : "HelloWorld_IS_TOP_LEVEL",
@@ -1259,7 +1259,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucious/Code/C++/SchoolWork/Template"
+			"value" : "/home/lucious/Code/StorageRoom/Template"
 		}
 	],
 	"kind" : "cache",

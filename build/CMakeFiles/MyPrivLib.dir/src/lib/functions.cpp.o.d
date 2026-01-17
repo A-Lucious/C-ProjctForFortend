@@ -1,6 +1,6 @@
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp \
+  /home/lucious/Code/StorageRoom/Template/src/lib/functions.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/iostream \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/requires_hosted.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -181,7 +181,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/fstream.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/sstream \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/sstream.tcc \
-  /home/lucious/Code/C++/SchoolWork/Template/include/json/single_include/nlohmann/json.hpp \
+  /home/lucious/Code/StorageRoom/Template/include/json/single_include/nlohmann/json.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/algorithm \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_algo.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/algorithmfwd.h \
@@ -782,7 +782,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
   /usr/local/include/crow/http_connection.h \
   /usr/local/include/crow/http_server.h \
   /usr/local/include/crow/version.h /usr/local/include/crow/app.h \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/course.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/list \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_list.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/list.tcc \

@@ -1,0 +1,545 @@
+{
+    "zhangsan01": {
+        "name": "Zhang San",
+        "age": 19,
+        "sex": "male",
+        "net_id": "zhangsan01",
+        "stunum": "24300001",
+        "grade_class": 1,
+        "college_name": "计算机学院",
+        "password": "password123",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "10001"],
+            [1, 1, "ENG101"],
+            [1, 2, "CS202"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "lisi02": {
+        "name": "Li Si",
+        "age": 20,
+        "sex": "male",
+        "net_id": "lisi02",
+        "stunum": "24300002",
+        "grade_class": 2,
+        "college_name": "物理学院",
+        "password": "securepass",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [2, 1, "PHY305"],
+            [1, 1, "44557"],
+            [2, 1, "ECO404"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "wangwu03": {
+        "name": "Wang Wu",
+        "age": 18,
+        "sex": "female",
+        "net_id": "wangwu03",
+        "stunum": "24300003",
+        "grade_class": 1,
+        "college_name": "人文学院",
+        "password": "wangwu_pass",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "ART004"],
+            [1, 2, "HIST200"],
+            [1, 1, "PHIL101"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "zhaoliu04": {
+        "name": "Zhao Liu",
+        "age": 21,
+        "sex": "male",
+        "net_id": "zhaoliu04",
+        "stunum": "24300004",
+        "grade_class": 3,
+        "college_name": "化学学院",
+        "password": "123456",
+        "needcredit": 155,
+        "maxGPA": 5,
+        "been": ["2022-9-1", "2026-7-1"],
+        "course_ids": [
+            [1, 1, "CHEM102"],
+            [1, 1, "10001"],
+            [2, 1, "SE404"]
+        ],
+        "current_semester": [3, 1]
+    },
+    "chenqi05": {
+        "name": "Chen Qi",
+        "age": 19,
+        "sex": "female",
+        "net_id": "chenqi05",
+        "stunum": "24300005",
+        "grade_class": 1,
+        "college_name": "生命科学院",
+        "password": "bio_pass",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [2, 2, "BIO555"],
+            [1, 1, "PE001"]
+        ],
+        "current_semester": [2, 2]
+    },
+    "sunba06": {
+        "name": "Sun Ba",
+        "age": 20,
+        "sex": "male",
+        "net_id": "sunba06",
+        "stunum": "24300006",
+        "grade_class": 2,
+        "college_name": "法学院",
+        "password": "lawyer",
+        "needcredit": 145,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 1, "LAW101"],
+            [1, 2, "PSY202"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "zhoujiu07": {
+        "name": "Zhou Jiu",
+        "age": 22,
+        "sex": "female",
+        "net_id": "zhoujiu07",
+        "stunum": "24300007",
+        "grade_class": 4,
+        "college_name": "信息工程学院",
+        "password": "tech",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2021-9-1", "2025-7-1"],
+        "course_ids": [
+            [2, 1, "CS303"],
+            [3, 1, "AI999"],
+            [2, 1, "NET202"]
+        ],
+        "current_semester": [4, 1]
+    },
+    "wushi08": {
+        "name": "Wu Shi",
+        "age": 18,
+        "sex": "male",
+        "net_id": "wushi08",
+        "stunum": "24300008",
+        "grade_class": 1,
+        "college_name": "艺术学院",
+        "password": "music",
+        "needcredit": 130,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 2, "MUS201"],
+            [1, 1, "FILM101"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "zhengshiyi09": {
+        "name": "Zheng Shiyi",
+        "age": 20,
+        "sex": "female",
+        "net_id": "zhengshiyi09",
+        "stunum": "24300009",
+        "grade_class": 2,
+        "college_name": "土木工程学院",
+        "password": "build",
+        "needcredit": 155,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [2, 1, "CIVIL303"],
+            [1, 1, "44557"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "fengshier10": {
+        "name": "Feng Shier",
+        "age": 19,
+        "sex": "male",
+        "net_id": "fengshier10",
+        "stunum": "24300010",
+        "grade_class": 1,
+        "college_name": "医学院",
+        "password": "doctor",
+        "needcredit": 170,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2029-7-1"],
+        "course_ids": [
+            [2, 2, "MED404"],
+            [1, 1, "CHEM102"]
+        ],
+        "current_semester": [2, 2]
+    },
+    "chushisan11": {
+        "name": "Chu Shisan",
+        "age": 21,
+        "sex": "female",
+        "net_id": "chushisan11",
+        "stunum": "24300011",
+        "grade_class": 3,
+        "college_name": "管理学院",
+        "password": "manager",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2022-9-1", "2026-7-1"],
+        "course_ids": [
+            [1, 1, "MGT666"],
+            [2, 2, "MARK303"],
+            [1, 2, "STAT200"]
+        ],
+        "current_semester": [3, 1]
+    },
+    "weishisi12": {
+        "name": "Wei Shisi",
+        "age": 20,
+        "sex": "male",
+        "net_id": "weishisi12",
+        "stunum": "24300012",
+        "grade_class": 2,
+        "college_name": "环境学院",
+        "password": "green",
+        "needcredit": 145,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 2, "ENV101"],
+            [1, 1, "ENG101"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "jiangshiwu13": {
+        "name": "Jiang Shiwu",
+        "age": 19,
+        "sex": "female",
+        "net_id": "jiangshiwu13",
+        "stunum": "24300013",
+        "grade_class": 1,
+        "college_name": "外国语学院",
+        "password": "jp",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "JP101"],
+            [1, 1, "PE001"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "shenshiliu14": {
+        "name": "Shen Shiliu",
+        "age": 22,
+        "sex": "male",
+        "net_id": "shenshiliu14",
+        "stunum": "24300014",
+        "grade_class": 4,
+        "college_name": "智能工程学院",
+        "password": "robot",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2021-9-1", "2025-7-1"],
+        "course_ids": [
+            [3, 1, "ROBOT500"],
+            [2, 1, "CS303"],
+            [1, 1, "44557"]
+        ],
+        "current_semester": [4, 1]
+    },
+    "hanshiqi15": {
+        "name": "Han Shiqi",
+        "age": 20,
+        "sex": "female",
+        "net_id": "hanshiqi15",
+        "stunum": "24300015",
+        "grade_class": 2,
+        "college_name": "文学院",
+        "password": "lit",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 2, "LIT303"],
+            [1, 2, "ASTRO01"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "yangshiba16": {
+        "name": "Yang Shiba",
+        "age": 19,
+        "sex": "male",
+        "net_id": "yangshiba16",
+        "stunum": "24300016",
+        "grade_class": 1,
+        "college_name": "未知学院",
+        "password": "oops",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "NULL123"],
+            [1, 1, "10001"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "zhushijiu17": {
+        "name": "Zhu Shijiu",
+        "age": 20,
+        "sex": "female",
+        "net_id": "zhushijiu17",
+        "stunum": "24300017",
+        "grade_class": 2,
+        "college_name": "测试学院",
+        "password": "test",
+        "needcredit": 155,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 2, "MISSING_CS"],
+            [1, 1, "ENG101"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "qinershi18": {
+        "name": "Qin Ershi",
+        "age": 21,
+        "sex": "male",
+        "net_id": "qinershi18",
+        "stunum": "24300018",
+        "grade_class": 3,
+        "college_name": "幽灵学院",
+        "password": "ghost",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2022-9-1", "2026-7-1"],
+        "course_ids": [
+            [1, 1, "GHOST001"],
+            [2, 1, "GHOST002"]
+        ],
+        "current_semester": [3, 1]
+    },
+    "youershiyi19": {
+        "name": "You Ershiyi",
+        "age": 18,
+        "sex": "female",
+        "net_id": "youershiyi19",
+        "stunum": "24300019",
+        "grade_class": 1,
+        "college_name": "混合学院",
+        "password": "mix",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "JP101"],
+            [1, 1, "INVALID_CODE"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "xuershier20": {
+        "name": "Xu Ershier",
+        "age": 20,
+        "sex": "male",
+        "net_id": "xuershier20",
+        "stunum": "24300020",
+        "grade_class": 2,
+        "college_name": "错误学院",
+        "password": "error",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [2, 1, "NOTFOUND404"],
+            [1, 2, "CS202"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "heershisan21": {
+        "name": "He Ershisan",
+        "age": 19,
+        "sex": "female",
+        "net_id": "heershisan21",
+        "stunum": "24300021",
+        "grade_class": 1,
+        "college_name": "历史学院",
+        "password": "history",
+        "needcredit": 145,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 2, "HIST200"],
+            [1, 1, "FAKE_HIST"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "miershisi22": {
+        "name": "Mi Ershisi",
+        "age": 22,
+        "sex": "male",
+        "net_id": "miershisi22",
+        "stunum": "24300022",
+        "grade_class": 4,
+        "college_name": "未来学院",
+        "password": "future",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2021-9-1", "2025-7-1"],
+        "course_ids": [
+            [3, 1, "AI999"],
+            [3, 2, "FUTURE_AI_101"]
+        ],
+        "current_semester": [4, 1]
+    },
+    "moershiwu23": {
+        "name": "Mo Ershiwu",
+        "age": 20,
+        "sex": "female",
+        "net_id": "moershiwu23",
+        "stunum": "24300023",
+        "grade_class": 2,
+        "college_name": "数学学院",
+        "password": "math",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 1, "44557"],
+            [1, 2, "CALC_III_FAKE"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "yusershiliu24": {
+        "name": "Yu Ershiliu",
+        "age": 21,
+        "sex": "male",
+        "net_id": "yusershiliu24",
+        "stunum": "24300024",
+        "grade_class": 3,
+        "college_name": "乱码学院",
+        "password": "spam",
+        "needcredit": 155,
+        "maxGPA": 5,
+        "been": ["2022-9-1", "2026-7-1"],
+        "course_ids": [
+            [1, 1, "@@@!!!"]
+        ],
+        "current_semester": [3, 1]
+    },
+    "baiershiqi25": {
+        "name": "Bai Ershiqi",
+        "age": 19,
+        "sex": "female",
+        "net_id": "baiershiqi25",
+        "stunum": "24300025",
+        "grade_class": 1,
+        "college_name": "外语学院",
+        "password": "lang",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [
+            [1, 1, "ENG101"],
+            [1, 2, "SPANISH_FAKE"]
+        ],
+        "current_semester": [1, 2]
+    },
+    "luoershiba26": {
+        "name": "Luo Ershiba",
+        "age": 20,
+        "sex": "male",
+        "net_id": "luoershiba26",
+        "stunum": "24300026",
+        "grade_class": 2,
+        "college_name": "哲学学院",
+        "password": "think",
+        "needcredit": 145,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 1, "PHIL101"],
+            [1, 2, "EXISTENTIALISM_VOID"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "biershijiu27": {
+        "name": "Bi Ershijiu",
+        "age": 22,
+        "sex": "female",
+        "net_id": "biershijiu27",
+        "stunum": "24300027",
+        "grade_class": 4,
+        "college_name": "经济学院",
+        "password": "money",
+        "needcredit": 160,
+        "maxGPA": 5,
+        "been": ["2021-9-1", "2025-7-1"],
+        "course_ids": [
+            [2, 1, "ECO404"],
+            [2, 2, "CRYPTO_SCAM_101"]
+        ],
+        "current_semester": [4, 1]
+    },
+    "anershiba28": {
+        "name": "An Sanshi",
+        "age": 18,
+        "sex": "male",
+        "net_id": "anershiba28",
+        "stunum": "24300028",
+        "grade_class": 1,
+        "college_name": "空白学院",
+        "password": "empty",
+        "needcredit": 130,
+        "maxGPA": 5,
+        "been": ["2024-9-1", "2028-7-1"],
+        "course_ids": [],
+        "current_semester": [1, 1]
+    },
+    "changsanshiyi29": {
+        "name": "Chang Sanshiyi",
+        "age": 20,
+        "sex": "female",
+        "net_id": "changsanshiyi29",
+        "stunum": "24300029",
+        "grade_class": 2,
+        "college_name": "体育学院",
+        "password": "sport",
+        "needcredit": 140,
+        "maxGPA": 5,
+        "been": ["2023-9-1", "2027-7-1"],
+        "course_ids": [
+            [1, 1, "PE001"],
+            [1, 2, "SOCCER_INVALID"]
+        ],
+        "current_semester": [2, 1]
+    },
+    "kongsanshi30": {
+        "name": "Kong Sanshi",
+        "age": 21,
+        "sex": "male",
+        "net_id": "kongsanshi30",
+        "stunum": "24300030",
+        "grade_class": 3,
+        "college_name": "综合学院",
+        "password": "all",
+        "needcredit": 150,
+        "maxGPA": 5,
+        "been": ["2022-9-1", "2026-7-1"],
+        "course_ids": [
+            [1, 1, "10001"],
+            [9, 9, "EXTREME_ERROR"]
+        ],
+        "current_semester": [3, 1]
+    }
+}

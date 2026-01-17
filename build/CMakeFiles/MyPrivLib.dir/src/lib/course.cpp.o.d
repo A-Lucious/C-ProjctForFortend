@@ -1,6 +1,6 @@
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.h \
+  /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp \
+  /home/lucious/Code/StorageRoom/Template/src/lib/course.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/iostream \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/requires_hosted.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -213,7 +213,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/hashtable.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/hashtable_policy.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/enable_special_members.h \
-  /home/lucious/Code/C++/SchoolWork/Template/include/json/single_include/nlohmann/json.hpp \
+  /home/lucious/Code/StorageRoom/Template/include/json/single_include/nlohmann/json.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/functional \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/std_function.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/array \
@@ -302,4 +302,4 @@ CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_numeric.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/pstl/glue_numeric_defs.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/any \
-  /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.h
+  /home/lucious/Code/StorageRoom/Template/src/lib/mankind.h

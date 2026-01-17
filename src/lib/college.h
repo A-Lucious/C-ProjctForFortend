@@ -35,10 +35,11 @@ public:
     void Set_Teacher(const Teacher& newTeacher);
 
     void ImportCourses(const std::string& path);
-    void ImportStudents();
+    void ImportStudents(const std::string& path);
     void ImportTeachers();
 
     nlohmann::json ExportCourses_jsonsimple();
+    nlohmann::json ExportStudents_jsonsimple();
     void ExportStudents();
     void ExportTeachers();
 

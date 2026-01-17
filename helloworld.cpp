@@ -26,16 +26,19 @@ int main() {
         res.end();
     });
 
+    //reload init
     CROW_ROUTE(app, "/")([](const crow::request& req, crow::response& res){
         res.set_static_file_info("./frontend/index.html");
         res.end();
     });
 
+    //reload init
     CROW_ROUTE(app, "/script.js")([](const crow::request& req, crow::response& res){
         res.set_static_file_info("./frontend/script.js");
         res.end();
     });
 
+    //fetch students and courses
     CROW_ROUTE(app,"/api/get_courses")([&c1](crow::response& res){
         res.code = 200;
         res.set_header("Content-Type", "application/json");
@@ -43,6 +46,14 @@ int main() {
         res.end();
     });
 
+    CROW_ROUTE(app,"/api/get_students")([&c1](crow::response& res){
+        res.code = 200;
+        res.set_header("Content-Type", "application/json");
+        res.write(c1.ExportStudents_jsonsimple().dump());
+        res.end();
+    });
+
+    //sort
     CROW_ROUTE(app, "/api/Sort/Course").methods(crow::HTTPMethod::OPTIONS,crow::HTTPMethod::POST)([&c1](const crow::request& req){
         if(req.method == crow::HTTPMethod::OPTIONS) {
             crow::response res(200);
@@ -55,6 +66,7 @@ int main() {
         return res;
     });
 
+    //search
     CROW_ROUTE(app, "/api/Search/Course").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
         std::string type = req.url_params.get("type");
         std::string query = req.url_params.get("q");
@@ -65,32 +77,6 @@ int main() {
         crow::response res(200);
         res.set_header("Content-Type", "application/json");
         res.write(js.dump());
-        return res;
-    });
-
-    CROW_ROUTE(app, "/get_history").methods(crow::HTTPMethod::GET,crow::HTTPMethod::OPTIONS)([](const crow::request& req){
-        if (req.method == crow::HTTPMethod::OPTIONS) {
-            crow::response res(200);
-            res.add_header("Access-Control-Allow-Origin", "*");
-            res.add_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-            res.add_header("Access-Control-Allow-Headers", "Content-Type");
-            return res;
-        }
-
-        std::vector<int> history_data = {40,23,34,41,50};
-
-        crow::json::wvalue::list l;
-        for(int v:history_data) {
-            l.push_back(v);
-        }
-
-        crow::json::wvalue x;
-        x["data"] = std::move(l); //move实现不必要的拷贝，减少性能消耗
-
-        crow::response res(x);
-        res.add_header("Access-Control-Allow-Origin", "*");
-        res.add_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-        res.add_header("Access-Control-Allow-Headers", "Content-Type");
         return res;
     });
 

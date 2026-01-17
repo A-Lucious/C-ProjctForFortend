@@ -5,43 +5,45 @@ createApp({
     data() {
         return {
             history: [], // 存储 C++ 返回的 vector
-            isOpen: true,
+            isOpen: false,
+            stuisOpen: false,
 
             searchType: "class_name",
-            currentLabel: "搜索课程名",
+            currentLabel: "Label",
+
             stuSearchType: "student_name",
-            stuCurrentLabel: "搜索学生名",
+            stuCurrentLabel: "Label",
 
             currentView: "calc", //当前导航栏物块
             searchQueryCourse: "",
+            searchQueryStudent: "",
 
             courselist: [],
-            studentLlist: []
+            studentlist: []
         }
     },
     watch:{
         searchQueryCourse(newVal,oldVal) {
             console.log('SearchQueryChange from ${oldVal} to ${newVal}');
-            CourseSort();
+            this.CourseSort();
+        },
+        currentView(newVal,oldVal) {
+            if(newVal === 'calc') {
+                console.log("cut to courses page");
+                console.log(this.courselist);
+                this.fetchCourses();
+            }else if (newVal === 'stus') {
+                console.log("cut to students page");
+                console.log(this.studentlist)
+                this.fetchStudents();
+            }
         }
+
     },
     // 2. 方法中心：存放原本的 calculate 逻辑
     //async异步处理
     methods: {
-        async refreshChart() {
-            const response = await fetch('/get_history');
-            const json = await response.json();
-            this.history = json.data;
-
-            // 调用 ECharts 画图
-            const myChart = echarts.init(document.getElementById('chart-main'));
-            myChart.setOption({
-                xAxis: { type: 'category', data: this.history.map((_, i) => i + 1) },
-                yAxis: { type: 'value' },
-                series: [{ data: this.history, type: 'line', smooth: true, color: '#42b983' }]
-            });
-        },
-
+        
         async handleCourseSearch() {
             const response = await fetch(`/api/Search/Course?type=${this.searchType}&q=${encodeURIComponent(this.searchQueryCourse)}`);
             const data = await response.json();
@@ -100,11 +102,22 @@ createApp({
             }catch(error) {
                 console.error("获取信息失败: ",error);
             }
+        },
+        async fetchStudents() {
+            try {
+                const response = await  fetch('/api/get_students');
+                const data = await response.json();
+
+                this.studentlist = data;
+            }catch(error) {
+                console.error("Get the students info failed",error);
+            }
         }
+        
     },
     // 3. 生命周期：网页加载完自动执行
     mounted() {
-        this.refreshChart();
         this.fetchCourses();
+        this.fetchStudents();
     }
 }).mount('#app');

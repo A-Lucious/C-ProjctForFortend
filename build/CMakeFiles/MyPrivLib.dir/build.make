@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lucious/Code/C++/SchoolWork/Template
+CMAKE_SOURCE_DIR = /home/lucious/Code/StorageRoom/Template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lucious/Code/C++/SchoolWork/Template/build
+CMAKE_BINARY_DIR = /home/lucious/Code/StorageRoom/Template/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MyPrivLib.dir/depend.make
@@ -73,60 +73,60 @@ CMakeFiles/MyPrivLib.dir/codegen:
 .PHONY : CMakeFiles/MyPrivLib.dir/codegen
 
 CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o: CMakeFiles/MyPrivLib.dir/flags.make
-CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o: /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp
+CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o: /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp
 CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o: CMakeFiles/MyPrivLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp
 
 CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp > CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp > CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.i
 
 CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.s
 
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: CMakeFiles/MyPrivLib.dir/flags.make
-CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp
+CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o: CMakeFiles/MyPrivLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp
 
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp > CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp > CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.i
 
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.s
 
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: CMakeFiles/MyPrivLib.dir/flags.make
-CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp
+CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: CMakeFiles/MyPrivLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp
 
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp > CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp > CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.i
 
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.s
 
 CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o: CMakeFiles/MyPrivLib.dir/flags.make
-CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o: /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp
+CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o: /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp
 CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o: CMakeFiles/MyPrivLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -MF CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o.d -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp
 
 CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp > CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp > CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.i
 
 CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.s
 
 # Object files for target MyPrivLib
 MyPrivLib_OBJECTS = \
@@ -144,7 +144,7 @@ libMyPrivLib.a: CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
 libMyPrivLib.a: CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o
 libMyPrivLib.a: CMakeFiles/MyPrivLib.dir/build.make
 libMyPrivLib.a: CMakeFiles/MyPrivLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libMyPrivLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lucious/Code/StorageRoom/Template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libMyPrivLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/MyPrivLib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyPrivLib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -157,6 +157,6 @@ CMakeFiles/MyPrivLib.dir/clean:
 .PHONY : CMakeFiles/MyPrivLib.dir/clean
 
 CMakeFiles/MyPrivLib.dir/depend:
-	cd /home/lucious/Code/C++/SchoolWork/Template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lucious/Code/C++/SchoolWork/Template /home/lucious/Code/C++/SchoolWork/Template /home/lucious/Code/C++/SchoolWork/Template/build /home/lucious/Code/C++/SchoolWork/Template/build /home/lucious/Code/C++/SchoolWork/Template/build/CMakeFiles/MyPrivLib.dir/DependInfo.cmake "--color=$(COLOR)" MyPrivLib
+	cd /home/lucious/Code/StorageRoom/Template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lucious/Code/StorageRoom/Template /home/lucious/Code/StorageRoom/Template /home/lucious/Code/StorageRoom/Template/build /home/lucious/Code/StorageRoom/Template/build /home/lucious/Code/StorageRoom/Template/build/CMakeFiles/MyPrivLib.dir/DependInfo.cmake "--color=$(COLOR)" MyPrivLib
 .PHONY : CMakeFiles/MyPrivLib.dir/depend
 

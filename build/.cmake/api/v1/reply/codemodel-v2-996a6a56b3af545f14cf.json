@@ -42,14 +42,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "HelloWorld::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-HelloWorld-Debug-41e3c92bbb8880d2c5e5.json",
+					"jsonFile" : "target-HelloWorld-Debug-f48fc62cafe808ce80cc.json",
 					"name" : "HelloWorld",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "MyPrivLib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MyPrivLib-Debug-7825a43ed6a3b05daf88.json",
+					"jsonFile" : "target-MyPrivLib-Debug-a209c9cc3648699e1170.json",
 					"name" : "MyPrivLib",
 					"projectIndex" : 0
 				}
@@ -59,8 +59,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/lucious/Code/C++/SchoolWork/Template/build",
-		"source" : "/home/lucious/Code/C++/SchoolWork/Template"
+		"build" : "/home/lucious/Code/StorageRoom/Template/build",
+		"source" : "/home/lucious/Code/StorageRoom/Template"
 	},
 	"version" : 
 	{

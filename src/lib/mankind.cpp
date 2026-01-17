@@ -9,7 +9,7 @@ std::string Mankind::Get_Name() {
 int Mankind::Get_Age() {
     return age;
 }
-int Mankind::Get_Sex() {
+std::string Mankind::Get_Sex() {
     return sex;
 }
 void Mankind::Set_Name(const std::string& newName) {
@@ -18,7 +18,7 @@ void Mankind::Set_Name(const std::string& newName) {
 void Mankind::Set_Age(const int& newAge) {
     age = newAge;
 }
-void Mankind::Set_Sex(const int& newSex) {
+void Mankind::Set_Sex(const std::string& newSex) {
     sex = newSex;
 }
 
@@ -26,6 +26,9 @@ Teacher::Teacher() {};
 Teacher::~Teacher() {};
 
 Student::Student() {};
+Student::Student(const nlohmann::json& data) {
+    ImportStudent(data);
+};
 Student::~Student() {};
 
 std::string Student::Get_NetId() {
@@ -70,16 +73,10 @@ std::pair<int,int> Student::Get_CurrentSemester() {
 std::list<std::pair<std::pair<int,int>,std::string>> Student::Get_CourseIds() {
     return course_ids;
 }
-std::map<std::string,std::vector<bool>> Student::Get_Checks() {
-    return checks;
-} 
-std::map<std::string,float[3]> Student::Get_ScoresCredit() {
+std::map<std::string,std::array<float,3>> Student::Get_ScoresCredit() {
     return scores_credit_GPA;
 }
-std::vector<bool> Student::Get_OneChecks(std::string course_id) {
-    return checks[course_id];
-}
-float* Student::Get_OneScoresCredit(std::string course_id) {
+std::array<float,3> Student::Get_OneScoresCredit(std::string course_id) {
     return scores_credit_GPA[course_id];
 }
 void Student::Set_NetId(const std::string& newid) {
@@ -105,9 +102,6 @@ void Student::Set_MAXGPA(const int& newMG) {
 }
 void Student::Set_Course(const std::pair<std::pair<int,int>,std::string>& newCourse) {
     course_ids.push_back(newCourse);
-}
-void Student::Set_Checks(const std::string& course_id, const bool& check, const int& indx) {
-    checks[course_id][indx] = check;
 }
 void Student::Set_ScoresCredit(const std::string& course_id, const float& scores, const float& credit, const std::map<std::string,Course>& Courses) {
     scores_credit_GPA[course_id][0] = scores;
@@ -149,4 +143,37 @@ void Student::Set_CurrentGPA() {
     }
 }
 
-void ExportThings() {};
+void Student::ImportStudent(const nlohmann::json& data) {
+    name = data["name"];
+    age = data["age"];
+    sex = data["sex"];
+    stunum = data["stunum"];
+    net_id = data["net_id"];
+    grade_class = data["grade_class"];
+    college_name = data["college_name"];
+    password = data["password"];
+    ass = 0; // maybe cant modify
+    needcredit = data["needcredit"];
+    maxGPA = data["maxGPA"];
+    been = {data["been"][0],data["been"][1]};
+    auto courses = data["course_ids"];
+    course_ids.clear();
+    scores_credit_GPA.clear();
+    for(auto& c:courses) {
+        std::pair<std::pair<int,int>,std::string> cid = {{c[0],c[1]},c[2]};
+        course_ids.push_back(cid);
+        scores_credit_GPA[c[2]] = {0.0,0.0,0.0};
+    }
+    current_semester = data["current_semester"];
+    current_credit = 0;
+    current_GPA[current_semester] = 0.0;
+}
+
+nlohmann::json Student::ExportStudent_to_simplejson() {
+    nlohmann::json nj;
+    nj["stunum"] = stunum;
+    nj["name"] = name;
+    nj["erldt"] = been.first;
+    nj["gdtdt"] = been.second;
+    return nj;
+}

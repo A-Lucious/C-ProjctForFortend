@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/lucious/Code/C++/SchoolWork/Template/build/cmake_install.cmake"
+		"/home/lucious/Code/StorageRoom/Template/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
