@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Crow + Vue 3 极简版</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div id="app">
+        <div id="headerbar">Manage System of Students</div>
+
+        <div class="main-wrapper">
+
+            <nav class="sidebar">
+                <div class="sidebar-header">Console</div>
+                <ul>
+                    <li @click="currentView = 'calc'":class="{active: currentView == 'calc'}">Courses</li>
+                    <li @click="currentView = 'stus'":class="{active: currentView == 'stus'}">Students</li>
+                </ul>
+            </nav>
+
+            <main class="content">
+
+                <div v-if="currentView === 'calc'">
+
+                    <div class="bar">
+                        
+                        <div class="searchlogo">
+                            <div class="search-icon-css"></div>
+                        </div>
+
+                        <div class="searchbox">
+                            <input type="text"
+                                v-model="searchQueryCourse"
+                                placeholder="Search Course by name..."
+                                @keyup.enter="handleCourseSearch">
+                            <button @click="handleCourseSearch">Search</button>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-trigger" @click="toggleDropdown"> 
+                                <span>{{ currentLabel }}</span>
+                                <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
+                            </button>
+                            
+                            <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
+                                <div class="dropdown-item"
+                                    @click="selectType('class_name', '课程名')">
+                                    搜索课程名    
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectType('teacher_name', '搜索老师名')">
+                                    搜索老师名
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectType('id', '搜索课程ID')">
+                                    搜索课程ID
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-container">
+
+                        <div class="centerbar"> 
+                            <p v-if="courselist.length === 0">Loading or None...</p>
+                        </div>
+
+                        <div v-for="item in courselist" :key="item.id" class="info-card">
+                            <div class="info-item"><strong>Credit:</strong>{{ item.id }}</div>
+                            <div class="info-item"><strong>Name:</strong>{{ item.classname }}</div>
+                            <div class="info-item"><strong>Teacher:</strong>{{ item.teacher }}</div>
+                            <div class="info-item"><strong>Semester;</strong>{{ item.semester }}</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div v-if="currentView === 'stus'">
+                    <h2>学生管理 (Students)</h2>
+                    <p>这里显示学生信息...</p>
+
+                    <div class="bar">
+                        
+                        <div class="searchlogo">
+                            <div class="search-icon-css"></div>
+                        </div>
+
+                        <div class="searchbox">
+                            <input type="text"
+                                v-model="searchQueryStudent"
+                                placeholder="Search Student by name..."
+                                @keyup.enter="handleStudentSearch">
+                            <button @click="handleStudentSearch">Search</button>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-trigger" @click="toggleDropdown"> 
+                                <span>{{ stuCurrentLabel }}</span>
+                                <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
+                            </button>
+                            
+                            <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
+                                <div class="dropdown-item"
+                                    @click="selectType('netid', 'netID')">
+                                    SearchNetID
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectType('studeent_name', 'StudentName')">
+                                    SearchStudentName
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectType('student_number', 'StudentNumber')">
+                                    SearchCourseID
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="student-container">
+                        <div class="data-container">
+                            <div class="info-card">
+                                    <div class="info-item">Student</div>
+                            </div>
+                        </div>
+                        <div class="swap" :class="{ 'swap-open': isOpen }"></div>
+                    </div>
+
+
+                </div>
+
+                <div id="chart-main"></div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

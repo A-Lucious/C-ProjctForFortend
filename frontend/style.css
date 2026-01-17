@@ -1,0 +1,315 @@
+/* style.css 内容 */
+/* 全局重置，确保占满全屏 */
+html, body, #app {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body { 
+    font-family: sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    /* padding: 40px;  */
+    background-color: #f5f7f9; /* 加个背景色 */
+}
+
+#headerbar {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    background-color: #c0e6ff;
+    width: 100%;
+    padding: 10px 10px;
+    height: 40px;
+    border-radius: 2.5vh;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100%;
+    width: 100px;
+    background-color: #3498db;
+    color: #eee;
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 10px;
+    /* margin-bottom: 20px; */
+    color: rgb(0, 0, 0);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding:  0;
+}
+
+.sidebar li {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #eee;
+}
+
+.sidebar li:active {
+    border-color: #42b983;
+    border-left: 5px solid #fff;
+}
+
+.content {
+    flex-grow: 1;
+    /* padding: 40px; */
+    background-color: #f5f7f9;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.card { 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    width: 350px; 
+    background: white; 
+}
+
+/* 这里可以继续添加新按钮的样式 */
+.btn-test {
+    background-color: #3498db;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+#chart-main {
+    width: 600px;  /* 或者 100% */
+    height: 400px; /* 必须设置高度，否则 ECharts 不显示 */
+    margin-top: 30px;
+    border: 1px solid #eee; /* 可选：方便调试看位置 */
+}
+
+.button-group {
+    display: flex;       /* 开启弹性布局 */
+    flex-direction: row; /* 横向排列 */
+    justify-content: space-between; /* 两个按钮分别靠向左右两端 */
+    width: 100%;         /* 撑满卡片宽度 */
+    margin-top: 15px;
+}
+
+.bar {
+    font-size: 15px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(189, 55, 28);
+    color: rgb(13, 23, 108);
+    height: 35px;
+    width: 100%;
+}
+
+.searchbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchbox input {
+    background-color: #a4a8ac;
+    border-radius: 10px;
+    outline: none;
+}
+
+.searchbox button {
+    padding: 10px 10px;
+    background-color: #42b983;
+}
+
+/* 搜索图标容器 */
+.search-icon-css {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #666; /* 放大镜的圆圈颜色 */
+    border-radius: 50%;     /* 变成正圆 */
+    position: relative;
+    margin-right: 8px;      /* 和输入框的间距 */
+    flex-shrink: 0;
+}
+
+/* 放大镜的那根“小棍子” */
+.search-icon-css::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background-color: #666; /* 棍子的颜色 */
+    bottom: -5px;           /* 调整棍子的位置 */
+    right: -3px;
+    transform: rotate(-45deg); /* 旋转 45 度 */
+}
+
+.searchlogo {
+    padding-top: 5px;
+    padding-left: 1px;
+    position: center;
+}
+
+.data-container {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column; /* 确保是纵向向下排列 */
+    gap: 15px;               /* 每一项之间的间距 */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.data-container-row {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: row; /* 确保是纵向向下排列 */
+    gap: 15px;               /* 每一项之间的间距 */
+    width: 100%;
+}
+
+.info-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around; /*内部信息均匀排布*/
+}
+
+.info-item {
+    font-size: 13px;
+    color: #333;
+}
+
+.centerbar {
+    width: 100%;
+    position: center;
+    text-align: center;
+}
+
+/* 容器 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    vertical-align: middle; /* 让它和搜索框对齐 */
+}
+
+/* 1. 触发按钮样式 */
+.dropdown-trigger {
+    width: 100%;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 箭头旋转动画 */
+.arrow {
+    transition: transform 0.3s;
+    font-size: 12px;
+}
+.arrow-up {
+    transform: rotate(180deg);
+}
+
+/* 2. 下滑菜单核心样式 */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* 在按钮正下方 */
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 100; /* 保证浮在最上面 */
+    
+    /* === 动画核心 === */
+    max-height: 0;          /* 默认高度为0，隐藏 */
+    overflow: hidden;       /* 超出部分隐藏 */
+    transition: max-height 0.4s ease-out; /* 0.4秒平滑过渡 */
+    /* ================ */
+}
+
+/* 展开时的样式 */
+.menu-open {
+    max-height: 200px; /* 设定一个足够展示完列表的高度 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 选项样式 */
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+    background-color: #e6f7ff; /* 鼠标悬停变色 */
+}
+
+.swap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    /* === 核心修改 === */
+    /* 不要用 min-height，改为 bottom: 0 */
+    /* 这样它会强制延伸到父容器的最底部 */
+    bottom: 0; 
+    
+    width: 700px;
+    background-color: #333;
+    box-shadow: -4px 0 6px rgba(0,0,0,0.1);
+    z-index: 10;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease-out;
+}
+
+.swap-open {
+    overflow-y: auto;
+    /* 激活时，移回原位 (0) */
+    transform: translateX(0);
+}
+
+.student-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    /* === 核心修改 === */
+    /* min-height: 100% 是不够的，如果父级没有高度，它就没高度 */
+    /* 改为 100vh (Viewport Height)，保证至少占满一个屏幕 */
+    min-height: 100vh; 
+    
+    min-width: 100%;
+    overflow-x: hidden;
+}

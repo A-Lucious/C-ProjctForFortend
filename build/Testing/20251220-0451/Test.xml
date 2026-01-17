@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20251220-0451-Experimental"
+	Name="(empty)"
+	Generator="ctest-4.2.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="Zephyr"
+	OSRelease="6.17.9-arch1-1"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Mon, 24 Nov 2025 15:21:09 +0000"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="183"
+	ModelName="Intel(R) Core(TM) i7-14700HX"
+	ProcessorCacheSize="33792"
+	NumberOfLogicalCPU="28"
+	NumberOfPhysicalCPU="20"
+	TotalVirtualMemory="35336"
+	TotalPhysicalMemory="31793"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="624.857"
+	>
+	<Testing>
+		<StartDateTime>Dec 21 12:53 CST</StartDateTime>
+		<StartTestTime>1766292800</StartTestTime>
+		<TestList/>
+		<EndDateTime>Dec 21 12:53 CST</EndDateTime>
+		<EndTestTime>1766292800</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

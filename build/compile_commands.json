@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/lucious/Code/C++/SchoolWork/Template/build",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/C++/SchoolWork/Template\\\" -I/home/lucious/Code/C++/SchoolWork/Template/src/lib -I/home/lucious/Code/C++/SchoolWork/Template/include -I/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp",
+  "file": "/home/lucious/Code/C++/SchoolWork/Template/src/lib/college.cpp",
+  "output": "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o"
+},
+{
+  "directory": "/home/lucious/Code/C++/SchoolWork/Template/build",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/C++/SchoolWork/Template\\\" -I/home/lucious/Code/C++/SchoolWork/Template/src/lib -I/home/lucious/Code/C++/SchoolWork/Template/include -I/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp",
+  "file": "/home/lucious/Code/C++/SchoolWork/Template/src/lib/course.cpp",
+  "output": "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o"
+},
+{
+  "directory": "/home/lucious/Code/C++/SchoolWork/Template/build",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/C++/SchoolWork/Template\\\" -I/home/lucious/Code/C++/SchoolWork/Template/src/lib -I/home/lucious/Code/C++/SchoolWork/Template/include -I/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp",
+  "file": "/home/lucious/Code/C++/SchoolWork/Template/src/lib/functions.cpp",
+  "output": "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o"
+},
+{
+  "directory": "/home/lucious/Code/C++/SchoolWork/Template/build",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/C++/SchoolWork/Template\\\" -I/home/lucious/Code/C++/SchoolWork/Template/src/lib -I/home/lucious/Code/C++/SchoolWork/Template/include -I/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp",
+  "file": "/home/lucious/Code/C++/SchoolWork/Template/src/lib/mankind.cpp",
+  "output": "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o"
+},
+{
+  "directory": "/home/lucious/Code/C++/SchoolWork/Template/build",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/C++/SchoolWork/Template\\\" -I/home/lucious/Code/C++/SchoolWork/Template/src/lib -I/home/lucious/Code/C++/SchoolWork/Template/include -I/home/lucious/Code/C++/SchoolWork/Template/include/json/single_include -g -o CMakeFiles/HelloWorld.dir/helloworld.cpp.o -c /home/lucious/Code/C++/SchoolWork/Template/helloworld.cpp",
+  "file": "/home/lucious/Code/C++/SchoolWork/Template/helloworld.cpp",
+  "output": "CMakeFiles/HelloWorld.dir/helloworld.cpp.o"
+}
+]

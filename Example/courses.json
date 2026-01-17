@@ -1,0 +1,349 @@
+{
+    "10001": {
+        "id": "10001",
+        "teacherid": "WangWei01",
+        "credit": 5,
+        "classname": "线性代数",
+        "semester": [1, 1],
+        "GPA": 4,
+        "tls": [
+            ["08:00:00", "逸夫楼"],
+            ["10:00:00", "逸夫楼"]
+        ]
+    },
+    "CS202": {
+        "id": "CS202",
+        "teacherid": "Turing88",
+        "credit": 4,
+        "classname": "数据结构与算法",
+        "semester": [1, 2],
+        "GPA": 5,
+        "tls": [
+            ["14:30:00", "理科楼"],
+            ["16:20:00", "理科楼"]
+        ]
+    },
+    "ENG101": {
+        "id": "ENG101",
+        "teacherid": "Smith99",
+        "credit": 2,
+        "classname": "大学英语III",
+        "semester": [1, 1],
+        "GPA": 3,
+        "tls": [
+            ["08:00:00", "文科楼"],
+            ["09:45:00", "语言实验室"]
+        ]
+    },
+    "PHY305": {
+        "id": "PHY305",
+        "teacherid": "Einstein76",
+        "credit": 5,
+        "classname": "量子力学导论",
+        "semester": [2, 1],
+        "GPA": 5,
+        "tls": [
+            ["10:00:00", "中山堂"],
+            ["13:00:00", "深圳校区"]
+        ]
+    },
+    "ART004": {
+        "id": "ART004",
+        "teacherid": "DaVinci11",
+        "credit": 2,
+        "classname": "西方艺术史",
+        "semester": [2, 2],
+        "GPA": 4,
+        "tls": [
+            ["19:00:00", "第三教学楼"]
+        ]
+    },
+    "44557": {
+        "id": "44557",
+        "teacherid": "Lucious35",
+        "credit": 4,
+        "classname": "微积分II",
+        "semester": [1, 1],
+        "GPA": 5,
+        "tls": [
+            ["08:00:00", "逸夫楼"],
+            ["10:00:00", "逸夫楼"]
+        ]
+    },
+    "PE001": {
+        "id": "PE001",
+        "teacherid": "Jordan23",
+        "credit": 1,
+        "classname": "篮球基础",
+        "semester": [1, 1],
+        "GPA": 2,
+        "tls": [
+            ["15:45:00", "北区体育馆"],
+            ["17:00:00", "北区体育馆"]
+        ]
+    },
+    "HIST200": {
+        "id": "HIST200",
+        "teacherid": "SimaQian01",
+        "credit": 3,
+        "classname": "中国近代史纲要",
+        "semester": [1, 2],
+        "GPA": 4,
+        "tls": [
+            ["19:00:00", "公共教学楼"]
+        ]
+    },
+    "CHEM102": {
+        "id": "CHEM102",
+        "teacherid": "CurieMarie",
+        "credit": 4,
+        "classname": "无机化学",
+        "semester": [1, 1],
+        "GPA": 4,
+        "tls": [
+            ["08:00:00", "化学楼"],
+            ["14:00:00", "实验中心"]
+        ]
+    },
+    "ECO404": {
+        "id": "ECO404",
+        "teacherid": "Keynes88",
+        "credit": 3,
+        "classname": "宏观经济学",
+        "semester": [2, 1],
+        "GPA": 5,
+        "tls": [
+            ["10:00:00", "经管大楼"],
+            ["11:30:00", "经管大楼"]
+        ]
+    },
+    "BIO555": {
+        "id": "BIO555",
+        "teacherid": "Darwin09",
+        "credit": 5,
+        "classname": "分子生物学",
+        "semester": [2, 2],
+        "GPA": 5,
+        "tls": [
+            ["09:00:00", "生科院"],
+            ["15:00:00", "生科院"]
+        ]
+    },
+    "LAW101": {
+        "id": "LAW101",
+        "teacherid": "Justitia01",
+        "credit": 2,
+        "classname": "法律基础与道德",
+        "semester": [1, 1],
+        "GPA": 3,
+        "tls": [
+            ["16:00:00", "模拟法庭"]
+        ]
+    },
+    "CS303": {
+        "id": "CS303",
+        "teacherid": "Lovelace42",
+        "credit": 4,
+        "classname": "操作系统",
+        "semester": [2, 1],
+        "GPA": 5,
+        "tls": [
+            ["08:00:00", "信息楼"],
+            ["10:00:00", "信息楼"]
+        ]
+    },
+    "PSY202": {
+        "id": "PSY202",
+        "teacherid": "Freud00",
+        "credit": 3,
+        "classname": "社会心理学",
+        "semester": [1, 2],
+        "GPA": 4,
+        "tls": [
+            ["14:00:00", "文科楼"]
+        ]
+    },
+    "PHIL101": {
+        "id": "PHIL101",
+        "teacherid": "Plato33",
+        "credit": 2,
+        "classname": "哲学导论",
+        "semester": [1, 1],
+        "GPA": 4,
+        "tls": [
+            ["18:30:00", "逸夫楼"]
+        ]
+    },
+    "AI999": {
+        "id": "AI999",
+        "teacherid": "Altman05",
+        "credit": 6,
+        "classname": "深度学习实战",
+        "semester": [3, 1],
+        "GPA": 5,
+        "tls": [
+            ["09:00:00", "深圳校区"],
+            ["14:00:00", "深圳校区"]
+        ]
+    },
+    "MUS201": {
+        "id": "MUS201",
+        "teacherid": "Beethoven5",
+        "credit": 1,
+        "classname": "交响乐鉴赏",
+        "semester": [1, 2],
+        "GPA": 5,
+        "tls": [
+            ["19:00:00", "音乐厅"]
+        ]
+    },
+    "CIVIL303": {
+        "id": "CIVIL303",
+        "teacherid": "LuBan01",
+        "credit": 4,
+        "classname": "土木工程制图",
+        "semester": [2, 1],
+        "GPA": 3,
+        "tls": [
+            ["08:00:00", "绘图室"],
+            ["10:00:00", "绘图室"]
+        ]
+    },
+    "MED404": {
+        "id": "MED404",
+        "teacherid": "Hippocrates",
+        "credit": 5,
+        "classname": "人体解剖学",
+        "semester": [2, 2],
+        "GPA": 4,
+        "tls": [
+            ["08:00:00", "医学楼"],
+            ["13:00:00", "医学楼"]
+        ]
+    },
+    "MGT666": {
+        "id": "MGT666",
+        "teacherid": "Drucker10",
+        "credit": 3,
+        "classname": "企业管理概论",
+        "semester": [1, 1],
+        "GPA": 4,
+        "tls": [
+            ["14:30:00", "经管大楼"]
+        ]
+    },
+    "ENV101": {
+        "id": "ENV101",
+        "teacherid": "Greta01",
+        "credit": 2,
+        "classname": "环境科学与保护",
+        "semester": [1, 2],
+        "GPA": 3,
+        "tls": [
+            ["10:00:00", "环境楼"]
+        ]
+    },
+    "JP101": {
+        "id": "JP101",
+        "teacherid": "Tanaka55",
+        "credit": 3,
+        "classname": "基础日语",
+        "semester": [1, 1],
+        "GPA": 4,
+        "tls": [
+            ["08:00:00", "外语中心"],
+            ["08:00:00", "外语中心"]
+        ]
+    },
+    "SE404": {
+        "id": "SE404",
+        "teacherid": "Brooks75",
+        "credit": 4,
+        "classname": "软件工程",
+        "semester": [2, 1],
+        "GPA": 5,
+        "tls": [
+            ["13:30:00", "信息楼"],
+            ["15:00:00", "信息楼"]
+        ]
+    },
+    "STAT200": {
+        "id": "STAT200",
+        "teacherid": "Fisher02",
+        "credit": 3,
+        "classname": "概率论与数理统计",
+        "semester": [1, 2],
+        "GPA": 4,
+        "tls": [
+            ["10:00:00", "数学楼"]
+        ]
+    },
+    "MARK303": {
+        "id": "MARK303",
+        "teacherid": "Kotler88",
+        "credit": 3,
+        "classname": "市场营销学",
+        "semester": [2, 2],
+        "GPA": 4,
+        "tls": [
+            ["14:00:00", "逸夫楼"]
+        ]
+    },
+    "ROBOT500": {
+        "id": "ROBOT500",
+        "teacherid": "Asimov42",
+        "credit": 5,
+        "classname": "机器人控制技术",
+        "semester": [3, 1],
+        "GPA": 5,
+        "tls": [
+            ["09:00:00", "智能制造中心"],
+            ["14:00:00", "深圳校区"]
+        ]
+    },
+    "LIT303": {
+        "id": "LIT303",
+        "teacherid": "LuXun01",
+        "credit": 3,
+        "classname": "中国现当代文学",
+        "semester": [1, 2],
+        "GPA": 4,
+        "tls": [
+            ["08:00:00", "人文馆"]
+        ]
+    },
+    "FILM101": {
+        "id": "FILM101",
+        "teacherid": "Nolan77",
+        "credit": 2,
+        "classname": "电影叙事分析",
+        "semester": [1, 1],
+        "GPA": 5,
+        "tls": [
+            ["18:00:00", "多媒体教室"]
+        ]
+    },
+    "NET202": {
+        "id": "NET202",
+        "teacherid": "Kahn55",
+        "credit": 4,
+        "classname": "计算机网络",
+        "semester": [2, 1],
+        "GPA": 4,
+        "tls": [
+            ["10:00:00", "网络中心"],
+            ["10:00:00", "网络中心"]
+        ]
+    },
+    "ASTRO01": {
+        "id": "ASTRO01",
+        "teacherid": "Sagan99",
+        "credit": 2,
+        "classname": "天文学漫谈",
+        "semester": [1, 2],
+        "GPA": 5,
+        "tls": [
+            ["20:00:00", "天文台"]
+        ]
+    }
+}
