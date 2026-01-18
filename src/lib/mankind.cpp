@@ -26,11 +26,14 @@ Teacher::Teacher() {};
 Teacher::~Teacher() {};
 
 Student::Student() {};
-Student::Student(const nlohmann::json& data) {
-    ImportStudent(data);
+Student::Student(const nlohmann::json& data, std::map<std::string,Course>& Courses) {
+    ImportStudent(data,Courses);
 };
 Student::~Student() {};
 
+std::string Student::Get_StuNum() {
+    return stunum;
+}
 std::string Student::Get_NetId() {
     return net_id;
 }
@@ -143,7 +146,7 @@ void Student::Set_CurrentGPA() {
     }
 }
 
-void Student::ImportStudent(const nlohmann::json& data) {
+void Student::ImportStudent(const nlohmann::json& data, std::map<std::string,Course>& Courses) {
     name = data["name"];
     age = data["age"];
     sex = data["sex"];
@@ -158,15 +161,35 @@ void Student::ImportStudent(const nlohmann::json& data) {
     been = {data["been"][0],data["been"][1]};
     auto courses = data["course_ids"];
     course_ids.clear();
-    scores_credit_GPA.clear();
     for(auto& c:courses) {
         std::pair<std::pair<int,int>,std::string> cid = {{c[0],c[1]},c[2]};
         course_ids.push_back(cid);
-        scores_credit_GPA[c[2]] = {0.0,0.0,0.0};
+    }
+    auto courses_scores = data["course_scores"];
+    current_credit = 0;
+    scores_credit_GPA.clear();
+    std::map<std::pair<int,int>,std::vector<float>> sgpas;
+    std::map<std::pair<int,int>,float> totalgpa;
+    for(auto& i:courses_scores) {
+        auto it = Courses.find(i[0]);
+        Course c;
+        if (it != Courses.end()) {
+            c = Courses[i[0]];
+        }else {
+            continue;
+        }
+        float gpa = c.Get_GPA()*((float)i[1]/100.0);
+        scores_credit_GPA[i[0]] = {i[1],(float)c.Get_Credit(),gpa};
+        current_credit += c.Get_Credit();
+        sgpas[c.Get_Semester()].push_back(gpa);
+        totalgpa[c.Get_Semester()] += gpa;
     }
     current_semester = data["current_semester"];
-    current_credit = 0;
     current_GPA[current_semester] = 0.0;
+    for(auto& i:sgpas) {
+        float len = (float)i.second.size();
+        current_GPA[i.first] = totalgpa[i.first]/len;
+    }
 }
 
 nlohmann::json Student::ExportStudent_to_simplejson() {

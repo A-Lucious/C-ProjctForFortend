@@ -38,16 +38,19 @@ public:
     void ImportStudents(const std::string& path);
     void ImportTeachers();
 
-    nlohmann::json ExportCourses_jsonsimple();
+    nlohmann::json ExportCourses_jsonsimple(); // export the info json
     nlohmann::json ExportStudents_jsonsimple();
     void ExportStudents();
     void ExportTeachers();
 
-    nlohmann::json SortCoursesByID();
-    nlohmann::json SortCoursesBySemester();
+    nlohmann::json SortCourses(const nlohmann::json& js, const std::string& type);
+    nlohmann::json SortStudent(const nlohmann::json& js, const std::string& type);
 
-    nlohmann::json SearchQuery(const std::string& str);
+    nlohmann::json SearchQuery(const std::string& str); //search
     nlohmann::json SearchQuery(const std::string& str,const std::string& type);
+    nlohmann::json SearchStuQuery(const std::string& str,const std::string& type);
+
+    nlohmann::json SearchSelectStudent(const std::string& stunum);
 
 };
 

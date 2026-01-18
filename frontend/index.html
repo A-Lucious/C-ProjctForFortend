@@ -49,6 +49,10 @@
                             
                             <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
                                 <div class="dropdown-item"
+                                    @click="selectType('fuzzy', 'Fuzzy')">
+                                    Fuzzy
+                                </div>
+                                <div class="dropdown-item"
                                     @click="selectType('class_name', '课程名')">
                                     搜索课程名    
                                 </div>
@@ -62,6 +66,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="line"></div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-trigger" @click="toggleSortDropdown"> 
+                                <span>{{ currentSortLabel }}</span>
+                                <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
+                            </button>
+                            
+                            <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
+                                <div class="dropdown-item"
+                                    @click="selectSortType('course_number', 'CourseNumber')">
+                                    CourseNumber
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectSortType('course_name', 'CourseName')">
+                                    CourseName
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectSortType('course_teacher', 'CourseTeacher')">
+                                    CourseTeacher
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
 
                     <div class="data-container">
@@ -107,16 +135,44 @@
                             
                             <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
                                 <div class="dropdown-item"
-                                    @click="selectType('netid', 'netID')">
+                                    @click="selectstuType('fuzzy', 'Fuzzy')">
+                                    Fuzzy
+                                </div>
+                                <div class="dropdown-item"
+                                    @click="selectstuType('netid', 'NetID')">
                                     NetID
                                 </div>
                                 <div class="dropdown-item" 
-                                    @click="selectType('studeent_name', 'StudentName')">
+                                    @click="selectstuType('student_name', 'StudentName')">
                                     StudentName
                                 </div>
                                 <div class="dropdown-item" 
-                                    @click="selectType('student_number', 'StudentNumber')">
-                                    CourseID
+                                    @click="selectstuType('student_number', 'StudentNumber')">
+                                    StudentNumber
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-trigger" @click="toggleSortDropdown"> 
+                                <span>{{ currentSortLabel }}</span>
+                                <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
+                            </button>
+                            
+                            <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
+                                <div class="dropdown-item"
+                                    @click="selectSortType('netid', 'NetID')">
+                                    NetID
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectSortType('student_name', 'StudentName')">
+                                    StudentName
+                                </div>
+                                <div class="dropdown-item" 
+                                    @click="selectSortType('student_number', 'StudentNumber')">
+                                    StudentNumber
                                 </div>
                             </div>
                         </div>
@@ -136,7 +192,7 @@
                                 <div class="info-item">
                                     <strong>StudentNumber: </strong>
                                     <span 
-                                        @click="stuisOpen = !stuisOpen" 
+                                        @click="selectStudent = item; openStudentDetail()" 
                                         style="cursor: pointer; color: blue; text-decoration: underline;"
                                     >
                                         {{ item.stunum }}
@@ -147,7 +203,21 @@
                                 <div class="info-item"><strong>Graduation Date: </strong>{{ item.gdtdt }}</div>
                             </div>
                         </div>
-                        <div class="swap" :class="{ 'swap-open': stuisOpen }"></div>
+                        <div class="swap" :class="{ 'swap-open': stuisOpen }">
+                            <div class="swap-header">
+                                <h3>学生学业统计: {{ currentStudent?.name }}</h3>
+                                <button @click="closeDetail">×</button>
+                            </div>
+                            
+                            <div class="charts-container">
+                                <div id="chart-grades" class="chart-box"></div>
+                                
+                                <div class="bottom-charts">
+                                    <div id="chart-credits" class="chart-box"></div>
+                                    <div id="chart-gpa" class="chart-box"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 

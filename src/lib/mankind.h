@@ -47,7 +47,7 @@ class Student : public Mankind {
 private:
 public:
     Student();
-    Student(const nlohmann::json& data);
+    Student(const nlohmann::json& data, std::map<std::string,Course>& Courses);
     ~Student();
     std::string stunum;
     std::string net_id; //学生id
@@ -98,7 +98,8 @@ public:
     void Set_CurrentCredit(const bool& set, const int& credit);
     void Set_CurrentGPA();
 
-    void ImportStudent(const nlohmann::json& data);
+
+    void ImportStudent(const nlohmann::json& data, std::map<std::string,Course>& Courses);
     nlohmann::json ExportStudent_to_simplejson();
 };
 

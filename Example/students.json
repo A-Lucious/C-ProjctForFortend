@@ -16,6 +16,11 @@
             [1, 1, "ENG101"],
             [1, 2, "CS202"]
         ],
+        "course_scores": [
+            ["10001", 85],
+            ["ENG101", 92],
+            ["CS202", 78]
+        ],
         "current_semester": [1, 2]
     },
     "lisi02": {
@@ -34,6 +39,11 @@
             [2, 1, "PHY305"],
             [1, 1, "44557"],
             [2, 1, "ECO404"]
+        ],
+        "course_scores": [
+            ["PHY305", 88],
+            ["44557", 95],
+            ["ECO404", 82]
         ],
         "current_semester": [2, 1]
     },
@@ -54,6 +64,11 @@
             [1, 2, "HIST200"],
             [1, 1, "PHIL101"]
         ],
+        "course_scores": [
+            ["ART004", 90],
+            ["HIST200", 85],
+            ["PHIL101", 93]
+        ],
         "current_semester": [1, 2]
     },
     "zhaoliu04": {
@@ -73,6 +88,11 @@
             [1, 1, "10001"],
             [2, 1, "SE404"]
         ],
+        "course_scores": [
+            ["CHEM102", 76],
+            ["10001", 89],
+            ["SE404", 91]
+        ],
         "current_semester": [3, 1]
     },
     "chenqi05": {
@@ -91,6 +111,10 @@
             [2, 2, "BIO555"],
             [1, 1, "PE001"]
         ],
+        "course_scores": [
+            ["BIO555", 84],
+            ["PE001", 96]
+        ],
         "current_semester": [2, 2]
     },
     "sunba06": {
@@ -108,6 +132,10 @@
         "course_ids": [
             [1, 1, "LAW101"],
             [1, 2, "PSY202"]
+        ],
+        "course_scores": [
+            ["LAW101", 88],
+            ["PSY202", 92]
         ],
         "current_semester": [2, 1]
     },
@@ -128,6 +156,11 @@
             [3, 1, "AI999"],
             [2, 1, "NET202"]
         ],
+        "course_scores": [
+            ["CS303", 75],
+            ["AI999", 98],
+            ["NET202", 80]
+        ],
         "current_semester": [4, 1]
     },
     "wushi08": {
@@ -145,6 +178,10 @@
         "course_ids": [
             [1, 2, "MUS201"],
             [1, 1, "FILM101"]
+        ],
+        "course_scores": [
+            ["MUS201", 95],
+            ["FILM101", 89]
         ],
         "current_semester": [1, 2]
     },
@@ -164,6 +201,10 @@
             [2, 1, "CIVIL303"],
             [1, 1, "44557"]
         ],
+        "course_scores": [
+            ["CIVIL303", 72],
+            ["44557", 85]
+        ],
         "current_semester": [2, 1]
     },
     "fengshier10": {
@@ -181,6 +222,10 @@
         "course_ids": [
             [2, 2, "MED404"],
             [1, 1, "CHEM102"]
+        ],
+        "course_scores": [
+            ["MED404", 94],
+            ["CHEM102", 81]
         ],
         "current_semester": [2, 2]
     },
@@ -201,6 +246,11 @@
             [2, 2, "MARK303"],
             [1, 2, "STAT200"]
         ],
+        "course_scores": [
+            ["MGT666", 88],
+            ["MARK303", 90],
+            ["STAT200", 79]
+        ],
         "current_semester": [3, 1]
     },
     "weishisi12": {
@@ -219,6 +269,10 @@
             [1, 2, "ENV101"],
             [1, 1, "ENG101"]
         ],
+        "course_scores": [
+            ["ENV101", 85],
+            ["ENG101", 82]
+        ],
         "current_semester": [2, 1]
     },
     "jiangshiwu13": {
@@ -236,6 +290,10 @@
         "course_ids": [
             [1, 1, "JP101"],
             [1, 1, "PE001"]
+        ],
+        "course_scores": [
+            ["JP101", 91],
+            ["PE001", 94]
         ],
         "current_semester": [1, 2]
     },
@@ -256,6 +314,11 @@
             [2, 1, "CS303"],
             [1, 1, "44557"]
         ],
+        "course_scores": [
+            ["ROBOT500", 87],
+            ["CS303", 82],
+            ["44557", 78]
+        ],
         "current_semester": [4, 1]
     },
     "hanshiqi15": {
@@ -273,6 +336,10 @@
         "course_ids": [
             [1, 2, "LIT303"],
             [1, 2, "ASTRO01"]
+        ],
+        "course_scores": [
+            ["LIT303", 89],
+            ["ASTRO01", 92]
         ],
         "current_semester": [2, 1]
     },
@@ -292,6 +359,10 @@
             [1, 1, "NULL123"],
             [1, 1, "10001"]
         ],
+        "course_scores": [
+            ["NULL123", 60],
+            ["10001", 75]
+        ],
         "current_semester": [1, 2]
     },
     "zhushijiu17": {
@@ -309,6 +380,10 @@
         "course_ids": [
             [1, 2, "MISSING_CS"],
             [1, 1, "ENG101"]
+        ],
+        "course_scores": [
+            ["MISSING_CS", 65],
+            ["ENG101", 88]
         ],
         "current_semester": [2, 1]
     },
@@ -328,6 +403,10 @@
             [1, 1, "GHOST001"],
             [2, 1, "GHOST002"]
         ],
+        "course_scores": [
+            ["GHOST001", 59],
+            ["GHOST002", 70]
+        ],
         "current_semester": [3, 1]
     },
     "youershiyi19": {
@@ -345,6 +424,10 @@
         "course_ids": [
             [1, 1, "JP101"],
             [1, 1, "INVALID_CODE"]
+        ],
+        "course_scores": [
+            ["JP101", 85],
+            ["INVALID_CODE", 0]
         ],
         "current_semester": [1, 2]
     },
@@ -364,6 +447,10 @@
             [2, 1, "NOTFOUND404"],
             [1, 2, "CS202"]
         ],
+        "course_scores": [
+            ["NOTFOUND404", 44],
+            ["CS202", 78]
+        ],
         "current_semester": [2, 1]
     },
     "heershisan21": {
@@ -381,6 +468,10 @@
         "course_ids": [
             [1, 2, "HIST200"],
             [1, 1, "FAKE_HIST"]
+        ],
+        "course_scores": [
+            ["HIST200", 86],
+            ["FAKE_HIST", 62]
         ],
         "current_semester": [1, 2]
     },
@@ -400,6 +491,10 @@
             [3, 1, "AI999"],
             [3, 2, "FUTURE_AI_101"]
         ],
+        "course_scores": [
+            ["AI999", 95],
+            ["FUTURE_AI_101", 99]
+        ],
         "current_semester": [4, 1]
     },
     "moershiwu23": {
@@ -418,6 +513,10 @@
             [1, 1, "44557"],
             [1, 2, "CALC_III_FAKE"]
         ],
+        "course_scores": [
+            ["44557", 89],
+            ["CALC_III_FAKE", 72]
+        ],
         "current_semester": [2, 1]
     },
     "yusershiliu24": {
@@ -434,6 +533,9 @@
         "been": ["2022-9-1", "2026-7-1"],
         "course_ids": [
             [1, 1, "@@@!!!"]
+        ],
+        "course_scores": [
+            ["@@@!!!", 10]
         ],
         "current_semester": [3, 1]
     },
@@ -453,6 +555,10 @@
             [1, 1, "ENG101"],
             [1, 2, "SPANISH_FAKE"]
         ],
+        "course_scores": [
+            ["ENG101", 91],
+            ["SPANISH_FAKE", 80]
+        ],
         "current_semester": [1, 2]
     },
     "luoershiba26": {
@@ -470,6 +576,10 @@
         "course_ids": [
             [1, 1, "PHIL101"],
             [1, 2, "EXISTENTIALISM_VOID"]
+        ],
+        "course_scores": [
+            ["PHIL101", 88],
+            ["EXISTENTIALISM_VOID", 65]
         ],
         "current_semester": [2, 1]
     },
@@ -489,6 +599,10 @@
             [2, 1, "ECO404"],
             [2, 2, "CRYPTO_SCAM_101"]
         ],
+        "course_scores": [
+            ["ECO404", 93],
+            ["CRYPTO_SCAM_101", 42]
+        ],
         "current_semester": [4, 1]
     },
     "anershiba28": {
@@ -504,6 +618,7 @@
         "maxGPA": 5,
         "been": ["2024-9-1", "2028-7-1"],
         "course_ids": [],
+        "course_scores": [],
         "current_semester": [1, 1]
     },
     "changsanshiyi29": {
@@ -522,6 +637,10 @@
             [1, 1, "PE001"],
             [1, 2, "SOCCER_INVALID"]
         ],
+        "course_scores": [
+            ["PE001", 96],
+            ["SOCCER_INVALID", 75]
+        ],
         "current_semester": [2, 1]
     },
     "kongsanshi30": {
@@ -539,6 +658,10 @@
         "course_ids": [
             [1, 1, "10001"],
             [9, 9, "EXTREME_ERROR"]
+        ],
+        "course_scores": [
+            ["10001", 82],
+            ["EXTREME_ERROR", 0]
         ],
         "current_semester": [3, 1]
     }
