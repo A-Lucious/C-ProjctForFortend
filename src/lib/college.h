@@ -33,6 +33,9 @@ public:
     void Set_Courses(const std::string& Cname, const Course& newCourse);
     void Set_Student(const Student& newStudent);
     void Set_Teacher(const Teacher& newTeacher);
+    void SetCourse(const nlohmann::json& item);
+    void SetStudent(const nlohmann::json& item); 
+    void ReFresh(const nlohmann::json& item);
 
     void ImportCourses(const std::string& path);
     void ImportStudents(const std::string& path);
@@ -40,6 +43,8 @@ public:
 
     nlohmann::json ExportCourses_jsonsimple(); // export the info json
     nlohmann::json ExportStudents_jsonsimple();
+    nlohmann::json ExportCourse_josn(const std::string& id);
+    nlohmann::json ExportStudent_json(const std::string& id);
     void ExportStudents();
     void ExportTeachers();
 

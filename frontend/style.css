@@ -267,30 +267,7 @@ body {
     background-color: #e6f7ff; /* 鼠标悬停变色 */
 }
 
-.swap {
-    position: absolute;
-    top: 0;
-    right: 0;
-    
-    /* === 核心修改 === */
-    /* 不要用 min-height，改为 bottom: 0 */
-    /* 这样它会强制延伸到父容器的最底部 */
-    bottom: 0; 
-    
-    width: 700px;
-    background-color: #333;
-    box-shadow: -4px 0 6px rgba(0,0,0,0.1);
-    z-index: 10;
 
-    transform: translateX(100%);
-    transition: transform 0.4s ease-out;
-}
-
-.swap-open {
-    overflow-y: auto;
-    /* 激活时，移回原位 (0) */
-    transform: translateX(0);
-}
 
 .student-container {
     display: flex;
@@ -309,21 +286,21 @@ body {
 /* 侧边栏样式优化 */
 .swap {
     position: fixed;
-    right: -50%; /* 默认隐藏在右侧外面 */
+    right: -50%;
     top: 0;
-    width: 50%;
+    width: 45%;
     height: 100%;
     background: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
-    padding: 20px;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 25px;
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 1000;
 }
 
 .swap-open {
-    right: 0; /* 激活时滑入 */
+    right: 0;
 }
 
 .swap-header {
@@ -331,8 +308,30 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.swap-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.swap-header button {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #999;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.swap-header button:hover {
+    color: #333;
 }
 
 .charts-container {
@@ -362,3 +361,122 @@ body {
 display: flex;
 width: 200px;
 }
+
+/* 编辑表单样式 */
+.edit-container {
+    padding-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.form-group input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: #999;
+}
+
+/* 保存按钮 */
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* 数组编辑样式 */
+.array-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.array-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.array-row input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+.btn-add {
+    background-color: #2196F3;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #1976D2;
+}
+

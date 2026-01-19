@@ -32,7 +32,23 @@ createApp({
             },
 
             currentSortLabel: "NetID",
-            sortType: "fuzzy"
+            sortType: "fuzzy",
+
+            //for set
+            setType: "",
+            setQuery: "",
+            setitem: null,
+            setpos: false,
+            
+            // 控制课程编辑侧边栏
+            courseEditOpen: false,
+            
+            // 控制学生编辑侧边栏
+            studentEditOpen: false,
+
+            // Toast notifications
+            toasts: [],
+            toastIdCounter: 0
         }
     },
     watch:{
@@ -53,7 +69,7 @@ createApp({
             }else if (newVal !== oldVal & newVal === "course_teacher" || newVal === "course_number" || newVal === "course_name") {
                 this.CourseSort();
             }
-        }
+        },
     },
     // 2. 方法中心：存放原本的 calculate 逻辑
     //async异步处理
@@ -141,6 +157,63 @@ createApp({
             }
         },
 
+        //set
+        async CourseSet() {
+            if (!this.setitem || !this.setitem.id) {
+                alert('请先选择要修改的课程');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/Set/Course`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        item: this.setitem
+                    }),
+                })
+                
+                if (response.ok) {
+                    alert('修改成功！');
+                    this.courseEditOpen = false;
+                    this.fetchCourses();
+                } else {
+                    alert('修改失败，请稍后重试');
+                }
+            }catch(error) {
+                console.error("Set Error",error);
+                alert('网络错误');
+            }
+        },
+
+        async StudentSet() {
+            if (!this.setitem || !this.setitem.stunum) {
+                alert('请先选择要修改的学生');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/Set/Student`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        item: this.setitem
+                    }),
+                })
+                
+                if (response.ok) {
+                    alert('修改成功！');
+                    this.studentEditOpen = false;
+                    this.fetchStudents();
+                } else {
+                    alert('修改失败，请稍后重试');
+                }
+            }catch(error) {
+                console.error("Set Error",error);
+                alert('网络错误');
+            }
+        },
+
         //拉去课程表
         async fetchCourses() {
             try {
@@ -161,6 +234,30 @@ createApp({
                 this.studentlist = data;
             }catch(error) {
                 console.error("Get the students info failed",error);
+            }
+        },
+
+        async fetchOneCourse() {
+            try {
+                const response = await fetch(`/api/get_onecourse?id=${this.setitem.id}`);
+                const data = await response.json();
+
+                this.setitem = data;
+                console.log(this.setitem);
+            }catch(error) {
+                console.error("Fetch One Course failed",error);
+            }
+        },
+
+        async fetchOneStudent() {
+            try {
+                const response = await fetch(`/api/get_onestudent?id=${this.setitem.stunum}`);
+                const data = await response.json();
+
+                this.setitem = data;
+                console.log(this.setitem);
+            }catch(error) {
+                console.error("Fetch One Student fialed",error);
             }
         },
 

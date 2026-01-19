@@ -37,6 +37,7 @@ public:
     std::pair<int,int> Get_Semester();
     std::vector<std::pair<std::string,std::string>> Get_Tls();
 
+    void Set_ClassName(const std::string& str);
     void Set_ID(const int& newID);
     void Set_Teahcer(const std::string& newTeacher);
     void Set_Credit(const int& newCredit);

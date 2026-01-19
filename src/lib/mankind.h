@@ -93,11 +93,11 @@ public:
     void Set_NeedCredit(const int& newNC);
     void Set_MAXGPA(const int& newMG);
     void Set_Course(const std::pair<std::pair<int,int>,std::string>& newCourse);
-    void Set_ScoresCredit(const std::string& course_id, const float& scores, const float& credit, const std::map<std::string,Course>& Courses);
+    void Set_ScoresCredit(const nlohmann::json& item);
     void Set_Semester(const int& S1,const int& S2);
     void Set_CurrentCredit(const bool& set, const int& credit);
     void Set_CurrentGPA();
-
+    void ReFresh(const nlohmann::json& data,std::map<std::string,Course>& Courses);
 
     void ImportStudent(const nlohmann::json& data, std::map<std::string,Course>& Courses);
     nlohmann::json ExportStudent_to_simplejson();

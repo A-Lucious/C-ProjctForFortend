@@ -98,7 +98,13 @@
                             <p v-if="courselist.length === 0">Loading or None...</p>
                         </div>
 
-                        <div v-for="item in courselist" :key="item.id" class="info-card">
+                        <div 
+                            v-for="item in courselist" 
+                            :key="item.id" 
+                            class="info-card"
+                            @click="setitem = JSON.parse(JSON.stringify(item)); courseEditOpen = true; fetchOneCourse()"
+                            style="cursor: pointer;"
+                        >
                             <div class="info-item"><strong>Credit:</strong>{{ item.id }}</div>
                             <div class="info-item"><strong>Name:</strong>{{ item.classname }}</div>
                             <div class="info-item"><strong>Teacher:</strong>{{ item.teacher }}</div>
@@ -201,6 +207,15 @@
                                 <div class="info-item"><strong>Name: </strong>{{ item.name }}</div>
                                 <div class="info-item"><strong>Enroll Date: </strong>{{ item.erldt }}</div>
                                 <div class="info-item"><strong>Graduation Date: </strong>{{ item.gdtdt }}</div>
+                                <div class="info-item">
+                                    <button 
+                                        class="btn-primary" 
+                                        @click.stop="setitem = JSON.parse(JSON.stringify(item)); studentEditOpen = true; fetchOneStudent()"
+                                        style="padding: 6px 12px; font-size: 14px; margin-top: 0;"
+                                    >
+                                        编辑
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="swap" :class="{ 'swap-open': stuisOpen }">
@@ -225,6 +240,197 @@
 
             </main>
 
+        </div>
+
+        <!-- 课程修改侧边栏 -->
+        <div class="swap" :class="{ 'swap-open': courseEditOpen }">
+            <div class="swap-header">
+                <h3>修改课程: {{ setitem?.classname || '未选择' }}</h3>
+                <button @click="courseEditOpen = false; setitem = null">×</button>
+            </div>
+            
+            <div class="edit-container" v-if="setitem">
+                <div class="form-group">
+                    <label>课程 ID</label>
+                    <input type="text" v-model="setitem.id" >
+                </div>
+                
+                <div class="form-group">
+                    <label>课程名称</label>
+                    <input type="text" v-model="setitem.classname">
+                </div>
+                
+                <div class="form-group">
+                    <label>学分</label>
+                    <input type="number" v-model.number="setitem.credit" min="0" max="10">
+                </div>
+                
+                <div class="form-group">
+                    <label>教师 ID</label>
+                    <input type="text" v-model="setitem.teacher">
+                </div>
+                
+                <div class="form-group">
+                    <label>GPA 权重</label>
+                    <input type="number" v-model.number="setitem.GPA" min="0" max="5" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label>学期 (年份, 学期)</label>
+                    <div class="array-row" v-if="setitem.semester">
+                        <input type="number" v-model.number="setitem.semester[0]" placeholder="年份" style="width: 48%;">
+                        <input type="number" v-model.number="setitem.semester[1]" placeholder="学期" style="width: 48%;">
+                    </div>
+                    <div v-else style="color: #999; font-size: 13px;">
+                        <button 
+                            class="btn-add" 
+                            @click="setitem.semester = [1, 1]"
+                            type="button"
+                        >+ 初始化学期</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>时间地点 (TLS)</label>
+                    <template v-if="setitem.tls && setitem.tls.length > 0">
+                        <div v-for="(tl, index) in setitem.tls" :key="index" class="array-item">
+                            <div class="array-row">
+                                <input type="text" v-model="setitem.tls[index][0]" placeholder="时间 (HH:MM:SS)" style="width: 45%;">
+                                <input type="text" v-model="setitem.tls[index][1]" placeholder="地点" style="width: 45%;">
+                                <button 
+                                    class="btn-delete" 
+                                    @click="setitem.tls.splice(index, 1)"
+                                    type="button"
+                                >删除</button>
+                            </div>
+                        </div>
+                    </template>
+                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px;">
+                        暂无时间地点
+                    </div>
+                    <button 
+                        class="btn-add" 
+                        @click="setitem.tls ? setitem.tls.push(['', '']) : setitem.tls = [['', '']]"
+                        type="button"
+                    >+ 添加时间地点</button>
+                </div>
+                
+                <button class="btn-primary" @click="CourseSet()">
+                    保存修改
+                </button>
+            </div>
+        </div>
+
+        <!-- 学生修改侧边栏 -->
+        <div class="swap" :class="{ 'swap-open': studentEditOpen }">
+            <div class="swap-header">
+                <h3>修改学生: {{ setitem?.name || '未选择' }}</h3>
+                <button @click="studentEditOpen = false; setitem = null;">×</button>
+            </div>
+            
+            <div class="edit-container" v-if="setitem">
+                <div class="form-group">
+                    <label>学号</label>
+                    <input type="text" v-model="setitem.stunum" >
+                </div>
+                
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" v-model="setitem.name">
+                </div>
+                
+                <div class="form-group">
+                    <label>入学日期</label>
+                    <input type="text" v-model="setitem.erldt">
+                </div>
+                
+                <div class="form-group">
+                    <label>毕业日期</label>
+                    <input type="text" v-model="setitem.gdtdt">
+                </div>
+                
+                <div class="form-group">
+                    <label>专业</label>
+                    <input type="text" v-model="setitem.college">
+                </div>
+
+                <div class="form-group">
+                    <label>所需学分</label>
+                    <input type="text" v-model="setitem.needcredit">
+                </div>
+
+                <div class="form-group">
+                    <label>最大绩点</label>
+                    <input type="text" v-model="setitem.maxGPA">
+                </div>
+
+                <div class="form-group">
+                    <label>在校时间 (入学-毕业)</label>
+                    <div class="array-row" v-if="setitem.been">
+                        <input type="text" v-model="setitem.been[0]" placeholder="入学日期 YYYY-MM-DD" style="width: 48%;">
+                        <input type="text" v-model="setitem.been[1]" placeholder="毕业日期 YYYY-MM-DD" style="width: 48%;">
+                    </div>
+                    <div v-else>
+                        <button 
+                            class="btn-add" 
+                            @click="setitem.been = ['', '']"
+                            type="button"
+                        >+ 初始化在校时间</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>课程 ID 列表</label>
+                    <template v-if="setitem.course_ids && setitem.course_ids.length > 0">
+                        <div v-for="(cid, index) in setitem.course_ids" :key="index" class="array-item">
+                            <div class="array-row">
+                                <input type="number" v-model.number="setitem.course_ids[index][0][0]" placeholder="年" style="width: 20%;">
+                                <input type="number" v-model.number="setitem.course_ids[index][0][1]" placeholder="学期" style="width: 20%;">
+                                <input type="text" v-model="setitem.course_ids[index][1]" placeholder="课程ID" style="width: 45%;">
+                                <button 
+                                    class="btn-delete" 
+                                    @click="setitem.course_ids.splice(index, 1)"
+                                    type="button"
+                                >删除</button>
+                            </div>
+                        </div>
+                    </template>
+                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px;">
+                        暂无课程
+                    </div>
+                    <button 
+                        class="btn-add" 
+                        @click="setitem.course_ids ? setitem.course_ids.push([[1, 1], '']) : setitem.course_ids = [[[1, 1], '']]"
+                        type="button"
+                    >+ 添加课程</button>
+                </div>
+
+                <div class="form-group">
+                    <label>课程成绩列表 (课程ID: [分数, 学分, GPA])</label>
+                    <template v-if="setitem.course_scores && Object.keys(setitem.course_scores).length > 0">
+                        <div v-for="(scoreData, courseId) in setitem.course_scores" :key="courseId" class="array-item">
+                            <div class="array-row">
+                                <span style="width: 22%; padding: 8px; background: #f0f0f0; border-radius: 4px; font-size: 13px; display: inline-block;">{{ courseId }}</span>
+                                <input type="number" v-model.number="setitem.course_scores[courseId][0]" placeholder="分数" style="width: 20%;">
+                                <input type="number" v-model.number="setitem.course_scores[courseId][1]" placeholder="学分" style="width: 20%;" disabled>
+                                <input type="number" v-model.number="setitem.course_scores[courseId][2]" placeholder="GPA" step="0.1" style="width: 20%;" disabled>
+                                <button 
+                                    class="btn-delete" 
+                                    @click="delete setitem.course_scores[courseId]"
+                                    type="button"
+                                >删除</button>
+                            </div>
+                        </div>
+                    </template>
+                    <div v-else style="color: #999; font-size: 13px;">
+                        暂无成绩（添加课程后自动生成）
+                    </div>
+                </div>
+                
+                <button class="btn-primary" @click="StudentSet()">
+                    保存修改
+                </button>
+            </div>
         </div>
     </div>
 

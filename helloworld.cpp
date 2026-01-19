@@ -140,6 +140,59 @@ int main() {
         return res;
     });
 
+    //get one course or student
+    CROW_ROUTE(app, "/api/get_onecourse").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
+        std::string id = req.url_params.get("id");
+        nlohmann::json js = c1.ExportCourse_josn(id);
+        crow::response res(200);
+        res.set_header("Content-Type", "application/json");
+        res.write(js.dump());
+        return res;
+    });
+
+    CROW_ROUTE(app, "/api/get_onestudent").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
+        std::string id = req.url_params.get("id");
+        nlohmann::json js = c1.ExportStudent_json(id);
+        crow::response res(200);
+        res.set_header("Content-Type", "application/json");
+        res.write(js.dump());
+        return res;
+    });
+
+    //set the Course
+    CROW_ROUTE(app, "/api/Set/Course").methods(crow::HTTPMethod::OPTIONS,crow::HTTPMethod::POST)([&c1](const crow::request& req) {
+        if (req.method == crow::HTTPMethod::OPTIONS) {
+            crow::response res(200);
+            res.add_header("Access-Control-Allow-Origin", "*");
+            res.add_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+            res.add_header("Access-Control-Allow-Headers", "Content-Type");
+            return res;
+        }
+        nlohmann::json json_data = nlohmann::json::parse(req.body);
+        nlohmann::json item = json_data["item"];
+        std::cout << item << std::endl;
+        c1.SetCourse(item);
+        crow::response res(200);
+        return res;
+    });
+
+    CROW_ROUTE(app, "/api/Set/Student").methods(crow::HTTPMethod::OPTIONS, crow::HTTPMethod::POST)([&c1](const crow::request& req){
+        if (req.method == crow::HTTPMethod::OPTIONS) {
+            crow::response res(200);
+            res.add_header("Access-Control-Allow-Origin", "*");
+            res.add_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+            res.add_header("Access-Control-Allow-Headers", "Content-Type");
+            return res;
+        }
+        nlohmann::json json_data = nlohmann::json::parse(req.body);
+        nlohmann::json item = json_data["item"];
+        std::cout << item << std::endl;
+        c1.SetStudent(item);
+        c1.ReFresh(item);
+        crow::response res(200);
+        return res;
+    });
+
     //use to open the url
     std::thread([](){
         std::this_thread::sleep_for(std::chrono::milliseconds(500));

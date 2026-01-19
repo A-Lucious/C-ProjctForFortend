@@ -28,6 +28,10 @@ std::pair<int,int> Course::Get_Semester() {
 std::vector<std::pair<std::string,std::string>> Course::Get_Tls() {
     return tls;
 }
+
+void Course::Set_ClassName(const std::string& str) {
+    class_name = str;
+}
 void Course::Set_ID(const int& newID)  {
     id = newID;
 }

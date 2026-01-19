@@ -70,6 +70,9 @@ float Student::Get_MeanGPA() {
     }
     return meanGPA/n;
 }
+std::pair<std::string,std::string> Student::Get_Been() {
+    return been;
+}
 std::pair<int,int> Student::Get_CurrentSemester() {
     return current_semester;
 }
@@ -106,19 +109,10 @@ void Student::Set_MAXGPA(const int& newMG) {
 void Student::Set_Course(const std::pair<std::pair<int,int>,std::string>& newCourse) {
     course_ids.push_back(newCourse);
 }
-void Student::Set_ScoresCredit(const std::string& course_id, const float& scores, const float& credit, const std::map<std::string,Course>& Courses) {
-    scores_credit_GPA[course_id][0] = scores;
-    scores_credit_GPA[course_id][1] = credit;
-    auto it = Courses.find(course_id);
-    if(it != Courses.end()) {
-        Course currentCs = it->second;
-        scores_credit_GPA[course_id][2] = currentCs.Get_GPA()*(scores/100.0);
-    }
-    else {
-        std::cout << "The course not exist in the coursesRoll" << std::endl;
-        scores_credit_GPA[course_id][2] = -1.0;
-    }
-
+void Student::Set_ScoresCredit(const nlohmann::json& item) {
+    scores_credit_GPA = item;
+    Set_CurrentCredit(false,0);
+    Set_CurrentGPA();
 }
 void Student::Set_Semester(const int& S1,const int& S2) {
     current_semester.first = S1;
@@ -180,6 +174,34 @@ void Student::ImportStudent(const nlohmann::json& data, std::map<std::string,Cou
         }
         float gpa = c.Get_GPA()*((float)i[1]/100.0);
         scores_credit_GPA[i[0]] = {i[1],(float)c.Get_Credit(),gpa};
+        current_credit += c.Get_Credit();
+        sgpas[c.Get_Semester()].push_back(gpa);
+        totalgpa[c.Get_Semester()] += gpa;
+    }
+    current_semester = data["current_semester"];
+    current_GPA[current_semester] = 0.0;
+    for(auto& i:sgpas) {
+        float len = (float)i.second.size();
+        current_GPA[i.first] = totalgpa[i.first]/len;
+    }
+}
+
+void Student::ReFresh(const nlohmann::json& data,std::map<std::string,Course>& Courses) {
+    auto courses_scores = data["course_scores"];
+    current_credit = 0;
+    scores_credit_GPA.clear();
+    std::map<std::pair<int,int>,std::vector<float>> sgpas;
+    std::map<std::pair<int,int>,float> totalgpa;
+    for(auto& [key, value]:courses_scores.items()) {
+        auto it = Courses.find(key);
+        Course c;
+        if (it != Courses.end()) {
+            c = Courses[key];
+        }else {
+            continue;
+        }
+        float gpa = c.Get_GPA()*((float)value[0]/100.0);
+        scores_credit_GPA[key] = {value[0],(float)c.Get_Credit(),gpa};
         current_credit += c.Get_Credit();
         sgpas[c.Get_Semester()].push_back(gpa);
         totalgpa[c.Get_Semester()] += gpa;

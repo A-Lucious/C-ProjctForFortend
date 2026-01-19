@@ -32,6 +32,34 @@ void College::Set_Teacher(const Teacher& newTeacher) {
     TeacherRoll[newTeacher.net_id] = newTeacher;
 }
 
+void College::SetCourse(const nlohmann::json& item) {
+    std::string id = item["id"];
+    Course& c = Courses[id];
+    c.id = item["id"];
+    c.class_name = item["classname"];
+    c.teacher = item["teacher"];
+    c.credit = item["credit"];
+    c.GPA = item["GPA"];
+    c.tls = item["tls"];
+}
+void College::SetStudent(const nlohmann::json& item) {
+    Student& stu = StudentRoll[item["stunum"]];
+    stu.net_id = item["stunum"];
+    stu.name = item["name"];
+    stu.been.first = item["erldt"];
+    stu.been.second = item["gdtdt"];
+    stu.college_name = item["college"];
+    stu.needcredit = item["needcredit"];
+    stu.maxGPA = item["maxGPA"];
+    stu.been = item["been"];
+    stu.course_ids = item["course_ids"];
+    stu.scores_credit_GPA = item["course_scores"];
+}
+void College::ReFresh(const nlohmann::json& item) {
+    Student& stu = StudentRoll[item["stunum"]];
+    stu.ReFresh(item,Courses);
+}
+
 void College::ImportCourses(const std::string& path) { //import courses json from path
     nlohmann::json courses = read_json_from_path(path);
     if (courses.empty()) {
@@ -74,6 +102,36 @@ nlohmann::json College::ExportStudents_jsonsimple() {
         item["id"] = stu.first;
         nj.push_back(item);
     }
+    return nj;
+}
+
+nlohmann::json College::ExportCourse_josn(const std::string& id) {
+    nlohmann::json nj;
+    Course c = Courses[id];
+    nj["id"] = id;
+    nj["classname"] = c.Get_ClassName();
+    nj["credit"] = c.Get_Credit();
+    nj["teacher"] = c.Get_Teacher();
+    nj["semester"] = c.Get_Semester();
+    nj["GPA"] = c.Get_GPA();
+    nj["tls"] = c.Get_Tls();
+    return nj;
+}
+
+nlohmann::json College::ExportStudent_json(const std::string& id) {
+    nlohmann::json nj;
+    Student stu = StudentRoll[id];
+    nj["stunum"] = stu.Get_StuNum();
+    nj["name"] = stu.Get_Name();
+    nj["erldt"] = stu.Get_Been().first;
+    nj["gdtdt"] = stu.Get_Been().second;
+    nj["college"] = stu.Get_CollegeName();
+    nj["needcredit"] = stu.Get_NeedCredit();
+    nj["maxGPA"] = stu.Get_MaxGPA();
+    nj["been"] = stu.Get_Been();
+    nj["course_ids"] = stu.Get_CourseIds();
+    nj["course_scores"] = stu.Get_ScoresCredit();
+    nj["current_semester"] = stu.Get_CurrentSemester();
     return nj;
 }
 
