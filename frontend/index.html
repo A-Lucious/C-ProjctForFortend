@@ -2,7 +2,12 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Crow + Vue 3 极简版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统 | Crow + Vue 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     
@@ -10,223 +15,233 @@
 </head>
 <body>
 
-    <div id="app">
-        <div id="headerbar">Manage System of Students</div>
+    <div id="app" v-cloak>
+        <input 
+            type="file" 
+            id="file-importer" 
+            ref="fileInput"
+            style="display: none" 
+            @change="handleImportFile"
+        >
+
+        <div id="headerbar">
+            <span>Manage System</span>
+        </div>
 
         <div class="main-wrapper">
 
             <nav class="sidebar">
-                <div class="sidebar-header">Console</div>
+                <div class="sidebar-header">
+                    <span class="nav-text">MENU</span>
+                    <svg class="menu-icon-collapsed" style="width:20px;height:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+                </div>
                 <ul>
-                    <li @click="currentView = 'calc'":class="{active: currentView == 'calc'}">Courses</li>
-                    <li @click="currentView = 'stus'":class="{active: currentView == 'stus'}">Students</li>
+                    <li @click="currentView = 'calc'" :class="{active: currentView == 'calc'}">
+                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        <span class="nav-text">Courses</span>
+                    </li>
+                    <li @click="currentView = 'stus'" :class="{active: currentView == 'stus'}">
+                        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <span class="nav-text">Students</span>
+                    </li>
                 </ul>
             </nav>
 
             <main class="content">
 
-                <div v-if="currentView === 'calc'">
-
-                    <div class="bar">
+                <transition name="fade" mode="out-in">
+                    
+                    <div v-if="currentView === 'calc'" key="calc">
                         
-                        <div class="searchlogo">
-                            <div class="search-icon-css"></div>
-                        </div>
+                        <div class="bar">
+                            <div class="searchlogo">
+                                <svg style="width:20px;height:20px;color:#6b7280" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
 
-                        <div class="searchbox">
-                            <input type="text"
-                                v-model="searchQueryCourse"
-                                placeholder="Search Course by name..."
-                                @keyup.enter="handleCourseSearch">
-                            <button @click="handleCourseSearch">Search</button>
-                        </div>
+                            <div class="searchbox">
+                                <input type="text"
+                                    v-model="searchQueryCourse"
+                                    placeholder="Search Course..."
+                                    @keyup.enter="handleCourseSearch">
+                                <button @click="handleCourseSearch">Search</button>
+                            </div>
 
-                        <div class="dropdown">
-                            <button class="dropdown-trigger" @click="toggleDropdown"> 
-                                <span>{{ currentLabel }}</span>
-                                <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
-                            </button>
-                            
-                            <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
-                                <div class="dropdown-item"
-                                    @click="selectType('fuzzy', 'Fuzzy')">
-                                    Fuzzy
-                                </div>
-                                <div class="dropdown-item"
-                                    @click="selectType('class_name', '课程名')">
-                                    搜索课程名    
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectType('teacher_name', '搜索老师名')">
-                                    搜索老师名
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectType('id', '搜索课程ID')">
-                                    搜索课程ID
+                            <div class="line"></div>
+
+                            <div class="dropdown">
+                                <button class="dropdown-trigger" @click="toggleDropdown"> 
+                                    <span>{{ currentLabel }}</span>
+                                    <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
+                                </button>
+                                <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
+                                    <div class="dropdown-item" @click="selectType('fuzzy', 'Fuzzy')">Fuzzy</div>
+                                    <div class="dropdown-item" @click="selectType('class_name', '课程名')">课程名</div>
+                                    <div class="dropdown-item" @click="selectType('teacher_name', '老师名')">老师名</div>
+                                    <div class="dropdown-item" @click="selectType('id', '课程ID')">课程ID</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="line"></div>
 
-                        <div class="dropdown">
-                            <button class="dropdown-trigger" @click="toggleSortDropdown"> 
-                                <span>{{ currentSortLabel }}</span>
-                                <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
-                            </button>
-                            
-                            <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
-                                <div class="dropdown-item"
-                                    @click="selectSortType('course_number', 'CourseNumber')">
-                                    CourseNumber
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectSortType('course_name', 'CourseName')">
-                                    CourseName
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectSortType('course_teacher', 'CourseTeacher')">
-                                    CourseTeacher
+                            <div class="dropdown">
+                                <button class="dropdown-trigger" @click="toggleSortDropdown"> 
+                                    <span>{{ currentSortLabel }}</span>
+                                    <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
+                                </button>
+                                <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
+                                    <div class="dropdown-item" @click="selectSortType('course_number', 'CourseNumber')">CourseNumber</div>
+                                    <div class="dropdown-item" @click="selectSortType('course_name', 'CourseName')">CourseName</div>
+                                    <div class="dropdown-item" @click="selectSortType('course_teacher', 'CourseTeacher')">CourseTeacher</div>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </div>
 
-                    <div class="data-container">
+                            <div class="action-group">
+                                <button class="btn-action" @click="triggerImport('course')">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                    <span>Import</span>
+                                </button>
+                                
+                                <input 
+                                    type="text" 
+                                    class="input-filename" 
+                                    v-model="exportAddress" 
+                                    placeholder="File Name..."
+                                >
 
-                        <div class="centerbar"> 
-                            <p v-if="courselist.length === 0">Loading or None...</p>
-                        </div>
-
-                        <div 
-                            v-for="item in courselist" 
-                            :key="item.id" 
-                            class="info-card"
-                            @click="setitem = JSON.parse(JSON.stringify(item)); courseEditOpen = true; fetchOneCourse()"
-                            style="cursor: pointer;"
-                        >
-                            <div class="info-item"><strong>Credit:</strong>{{ item.id }}</div>
-                            <div class="info-item"><strong>Name:</strong>{{ item.classname }}</div>
-                            <div class="info-item"><strong>Teacher:</strong>{{ item.teacher }}</div>
-                            <div class="info-item"><strong>Semester;</strong>{{ item.semester }}</div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div v-if="currentView === 'stus'">
-                    <h2>学生管理 (Students)</h2>
-                    <p>这里显示学生信息...</p>
-
-                    <div class="bar">
-                        
-                        <div class="searchlogo">
-                            <div class="search-icon-css"></div>
-                        </div>
-
-                        <div class="searchbox">
-                            <input type="text"
-                                v-model="searchQueryStudent"
-                                placeholder="Search Student by name..."
-                                @keyup.enter="handleStudentSearch">
-                            <button @click="handleStudentSearch">Search</button>
-                        </div>
-
-                        <div class="dropdown">
-                            <button class="dropdown-trigger" @click="toggleDropdown"> 
-                                <span>{{ stuCurrentLabel }}</span>
-                                <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
-                            </button>
-                            
-                            <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
-                                <div class="dropdown-item"
-                                    @click="selectstuType('fuzzy', 'Fuzzy')">
-                                    Fuzzy
-                                </div>
-                                <div class="dropdown-item"
-                                    @click="selectstuType('netid', 'NetID')">
-                                    NetID
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectstuType('student_name', 'StudentName')">
-                                    StudentName
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectstuType('student_number', 'StudentNumber')">
-                                    StudentNumber
-                                </div>
+                                <button class="btn-action" @click="exportCourses()">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                    <span>Export</span>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="line"></div>
-
-                        <div class="dropdown">
-                            <button class="dropdown-trigger" @click="toggleSortDropdown"> 
-                                <span>{{ currentSortLabel }}</span>
-                                <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
-                            </button>
-                            
-                            <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
-                                <div class="dropdown-item"
-                                    @click="selectSortType('netid', 'NetID')">
-                                    NetID
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectSortType('student_name', 'StudentName')">
-                                    StudentName
-                                </div>
-                                <div class="dropdown-item" 
-                                    @click="selectSortType('student_number', 'StudentNumber')">
-                                    StudentNumber
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="student-container">
                         <div class="data-container">
-                            <div class="info-card">
-                                    <div class="info-item">Student</div>
+                            <div class="centerbar" v-if="courselist.length === 0">
+                                <svg style="width:48px;height:48px;margin-bottom:10px;color:#d1d5db;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+                                <p>No courses found...</p>
                             </div>
 
-                            <div class="centerbar">
-                                <p v-if="studentlist.length === 0">Loading or none...</p>
+                            <transition-group name="list">
+                                <div 
+                                    v-for="item in courselist" 
+                                    :key="item.id" 
+                                    class="info-card"
+                                    @click="setitem = JSON.parse(JSON.stringify(item)); courseEditOpen = true; fetchOneCourse()"
+                                >
+                                    <div class="info-item"><strong>Credit ID</strong><span>{{ item.id }}</span></div>
+                                    <div class="info-item"><strong>Name</strong><span>{{ item.classname }}</span></div>
+                                    <div class="info-item"><strong>Teacher</strong><span>{{ item.teacher }}</span></div>
+                                    <div class="info-item"><strong>Semester</strong>
+                                        <span style="background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 4px; font-size: 12px;">
+                                            {{ item.semester }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </transition-group>
+                        </div>
+                    </div>
+
+                    <div v-else-if="currentView === 'stus'" key="stus">
+                        <h2 style="margin-top:0; font-size: 24px;">Students Directory</h2>
+                        
+                        <div class="bar">
+                            <div class="searchlogo">
+                                <svg style="width:20px;height:20px;color:#6b7280" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                             </div>
 
-                            <div v-for="item in studentlist" :key="item.id" class="info-card">
-                                <div class="info-item">
-                                    <strong>StudentNumber: </strong>
-                                    <span 
-                                        @click="selectStudent = item; openStudentDetail()" 
-                                        style="cursor: pointer; color: blue; text-decoration: underline;"
-                                    >
-                                        {{ item.stunum }}
-                                    </span>
+                            <div class="searchbox">
+                                <input type="text"
+                                    v-model="searchQueryStudent"
+                                    placeholder="Search Student..."
+                                    @keyup.enter="handleStudentSearch">
+                                <button @click="handleStudentSearch">Search</button>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="dropdown">
+                                <button class="dropdown-trigger" @click="toggleDropdown"> 
+                                    <span>{{ stuCurrentLabel }}</span>
+                                    <span class="arrow" :class="{ 'arrow-up': isOpen }">▼</span>
+                                </button>
+                                <div class="dropdown-menu" :class="{ 'menu-open': isOpen }">
+                                    <div class="dropdown-item" @click="selectstuType('fuzzy', 'Fuzzy')">Fuzzy</div>
+                                    <div class="dropdown-item" @click="selectstuType('netid', 'NetID')">NetID</div>
+                                    <div class="dropdown-item" @click="selectstuType('student_name', 'Name')">Name</div>
+                                    <div class="dropdown-item" @click="selectstuType('student_number', 'Number')">Number</div>
                                 </div>
-                                <div class="info-item"><strong>Name: </strong>{{ item.name }}</div>
-                                <div class="info-item"><strong>Enroll Date: </strong>{{ item.erldt }}</div>
-                                <div class="info-item"><strong>Graduation Date: </strong>{{ item.gdtdt }}</div>
-                                <div class="info-item">
-                                    <button 
-                                        class="btn-primary" 
-                                        @click.stop="setitem = JSON.parse(JSON.stringify(item)); studentEditOpen = true; fetchOneStudent()"
-                                        style="padding: 6px 12px; font-size: 14px; margin-top: 0;"
-                                    >
-                                        编辑
-                                    </button>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="dropdown-trigger" @click="toggleSortDropdown"> 
+                                    <span>{{ currentSortLabel }}</span>
+                                    <span class="arrow" :class="{ 'arrow-up': isSortOpen }">▼</span>
+                                </button>
+                                <div class="dropdown-menu" :class="{ 'menu-open': isSortOpen }">
+                                    <div class="dropdown-item" @click="selectSortType('netid', 'NetID')">NetID</div>
+                                    <div class="dropdown-item" @click="selectSortType('student_name', 'Name')">Name</div>
+                                    <div class="dropdown-item" @click="selectSortType('student_number', 'Number')">Number</div>
                                 </div>
+                            </div>
+
+                            <div class="action-group">
+                                <button class="btn-action" @click="triggerImport('student')">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                    <span>Import</span>
+                                </button>
+
+                                <input 
+                                    type="text" 
+                                    class="input-filename" 
+                                    v-model="exportAddress" 
+                                    placeholder="File Name..."
+                                >
+
+                                <button class="btn-action" @click="exportStudents()">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                    <span>Export</span>
+                                </button>
                             </div>
                         </div>
+
+                        <div class="data-container">
+                            <div class="centerbar" v-if="studentlist.length === 0">
+                                <p>Loading or none...</p>
+                            </div>
+
+                            <transition-group name="list">
+                                <div v-for="item in studentlist" :key="item.id" class="info-card">
+                                    <div class="info-item">
+                                        <strong>Student #</strong>
+                                        <span 
+                                            class="link-text"
+                                            @click.stop="selectStudent = item; openStudentDetail()" 
+                                        >
+                                            {{ item.stunum }}
+                                        </span>
+                                    </div>
+                                    <div class="info-item"><strong>Name</strong><span>{{ item.name }}</span></div>
+                                    <div class="info-item"><strong>Enrolled</strong><span>{{ item.erldt }}</span></div>
+                                    <div class="info-item"><strong>Graduation</strong><span>{{ item.gdtdt }}</span></div>
+                                    <div style="margin-top: 10px; display:flex; justify-content: flex-end;">
+                                        <button 
+                                            class="btn-primary" 
+                                            @click.stop="setitem = JSON.parse(JSON.stringify(item)); studentEditOpen = true; fetchOneStudent()"
+                                            style="width: auto; padding: 6px 16px; font-size: 13px;"
+                                        >
+                                            Edit
+                                        </button>
+                                    </div>
+                                </div>
+                            </transition-group>
+                        </div>
+
                         <div class="swap" :class="{ 'swap-open': stuisOpen }">
                             <div class="swap-header">
-                                <h3>学生学业统计: {{ currentStudent?.name }}</h3>
+                                <h3>Analysis: {{ currentStudent?.name }}</h3>
                                 <button @click="closeDetail">×</button>
                             </div>
                             
                             <div class="charts-container">
                                 <div id="chart-grades" class="chart-box"></div>
-                                
                                 <div class="bottom-charts">
                                     <div id="chart-credits" class="chart-box"></div>
                                     <div id="chart-gpa" class="chart-box"></div>
@@ -235,206 +250,128 @@
                         </div>
                     </div>
 
-
-                </div>
-
+                </transition>
             </main>
-
         </div>
 
-        <!-- 课程修改侧边栏 -->
         <div class="swap" :class="{ 'swap-open': courseEditOpen }">
             <div class="swap-header">
-                <h3>修改课程: {{ setitem?.classname || '未选择' }}</h3>
+                <h3>Edit Course</h3>
                 <button @click="courseEditOpen = false; setitem = null">×</button>
             </div>
             
             <div class="edit-container" v-if="setitem">
                 <div class="form-group">
-                    <label>课程 ID</label>
-                    <input type="text" v-model="setitem.id" >
+                    <label>Course ID</label>
+                    <input type="text" v-model="setitem.id" disabled>
                 </div>
-                
                 <div class="form-group">
-                    <label>课程名称</label>
+                    <label>Course Name</label>
                     <input type="text" v-model="setitem.classname">
                 </div>
-                
                 <div class="form-group">
-                    <label>学分</label>
+                    <label>Credits</label>
                     <input type="number" v-model.number="setitem.credit" min="0" max="10">
                 </div>
-                
                 <div class="form-group">
-                    <label>教师 ID</label>
+                    <label>Teacher ID</label>
                     <input type="text" v-model="setitem.teacher">
                 </div>
-                
                 <div class="form-group">
-                    <label>GPA 权重</label>
-                    <input type="number" v-model.number="setitem.GPA" min="0" max="5" step="0.1">
-                </div>
-
-                <div class="form-group">
-                    <label>学期 (年份, 学期)</label>
+                    <label>Semester (Year, Sem)</label>
                     <div class="array-row" v-if="setitem.semester">
-                        <input type="number" v-model.number="setitem.semester[0]" placeholder="年份" style="width: 48%;">
-                        <input type="number" v-model.number="setitem.semester[1]" placeholder="学期" style="width: 48%;">
-                    </div>
-                    <div v-else style="color: #999; font-size: 13px;">
-                        <button 
-                            class="btn-add" 
-                            @click="setitem.semester = [1, 1]"
-                            type="button"
-                        >+ 初始化学期</button>
+                        <input type="number" v-model.number="setitem.semester[0]" placeholder="Year">
+                        <input type="number" v-model.number="setitem.semester[1]" placeholder="Sem">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label>时间地点 (TLS)</label>
-                    <template v-if="setitem.tls && setitem.tls.length > 0">
-                        <div v-for="(tl, index) in setitem.tls" :key="index" class="array-item">
-                            <div class="array-row">
-                                <input type="text" v-model="setitem.tls[index][0]" placeholder="时间 (HH:MM:SS)" style="width: 45%;">
-                                <input type="text" v-model="setitem.tls[index][1]" placeholder="地点" style="width: 45%;">
-                                <button 
-                                    class="btn-delete" 
-                                    @click="setitem.tls.splice(index, 1)"
-                                    type="button"
-                                >删除</button>
-                            </div>
+                    <label>Schedule (Time & Location)</label>
+                    <div v-for="(tl, index) in setitem.tls" :key="index" class="array-item">
+                        <div class="array-row">
+                            <input type="text" v-model="setitem.tls[index][0]" placeholder="Time">
+                            <input type="text" v-model="setitem.tls[index][1]" placeholder="Loc">
+                            <button class="btn-delete" @click="setitem.tls.splice(index, 1)">Del</button>
                         </div>
-                    </template>
-                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px;">
-                        暂无时间地点
                     </div>
-                    <button 
-                        class="btn-add" 
-                        @click="setitem.tls ? setitem.tls.push(['', '']) : setitem.tls = [['', '']]"
-                        type="button"
-                    >+ 添加时间地点</button>
+                    <button class="btn-add" @click="setitem.tls ? setitem.tls.push(['', '']) : setitem.tls = [['', '']]">+ Add Schedule</button>
                 </div>
-                
-                <button class="btn-primary" @click="CourseSet()">
-                    保存修改
-                </button>
+                <button class="btn-primary" @click="CourseSet()">Save Changes</button>
             </div>
         </div>
 
-        <!-- 学生修改侧边栏 -->
         <div class="swap" :class="{ 'swap-open': studentEditOpen }">
             <div class="swap-header">
-                <h3>修改学生: {{ setitem?.name || '未选择' }}</h3>
+                <h3>Edit Student: {{ setitem?.name || 'Select a student' }}</h3>
                 <button @click="studentEditOpen = false; setitem = null;">×</button>
             </div>
             
             <div class="edit-container" v-if="setitem">
                 <div class="form-group">
-                    <label>学号</label>
-                    <input type="text" v-model="setitem.stunum" >
+                    <label>Student Number</label>
+                    <input type="text" v-model="setitem.stunum">
                 </div>
-                
                 <div class="form-group">
-                    <label>姓名</label>
+                    <label>Name</label>
                     <input type="text" v-model="setitem.name">
                 </div>
-                
                 <div class="form-group">
-                    <label>入学日期</label>
+                    <label>Enroll Date</label>
                     <input type="text" v-model="setitem.erldt">
                 </div>
-                
                 <div class="form-group">
-                    <label>毕业日期</label>
-                    <input type="text" v-model="setitem.gdtdt">
-                </div>
-                
-                <div class="form-group">
-                    <label>专业</label>
+                    <label>Major / College</label>
                     <input type="text" v-model="setitem.college">
                 </div>
 
                 <div class="form-group">
-                    <label>所需学分</label>
-                    <input type="text" v-model="setitem.needcredit">
-                </div>
-
-                <div class="form-group">
-                    <label>最大绩点</label>
-                    <input type="text" v-model="setitem.maxGPA">
-                </div>
-
-                <div class="form-group">
-                    <label>在校时间 (入学-毕业)</label>
-                    <div class="array-row" v-if="setitem.been">
-                        <input type="text" v-model="setitem.been[0]" placeholder="入学日期 YYYY-MM-DD" style="width: 48%;">
-                        <input type="text" v-model="setitem.been[1]" placeholder="毕业日期 YYYY-MM-DD" style="width: 48%;">
-                    </div>
-                    <div v-else>
-                        <button 
-                            class="btn-add" 
-                            @click="setitem.been = ['', '']"
-                            type="button"
-                        >+ 初始化在校时间</button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>课程 ID 列表</label>
+                    <label>Course Enrollment (Year, Sem, ID)</label>
                     <template v-if="setitem.course_ids && setitem.course_ids.length > 0">
                         <div v-for="(cid, index) in setitem.course_ids" :key="index" class="array-item">
                             <div class="array-row">
-                                <input type="number" v-model.number="setitem.course_ids[index][0][0]" placeholder="年" style="width: 20%;">
-                                <input type="number" v-model.number="setitem.course_ids[index][0][1]" placeholder="学期" style="width: 20%;">
-                                <input type="text" v-model="setitem.course_ids[index][1]" placeholder="课程ID" style="width: 45%;">
-                                <button 
-                                    class="btn-delete" 
-                                    @click="setitem.course_ids.splice(index, 1)"
-                                    type="button"
-                                >删除</button>
+                                <input type="number" v-model.number="setitem.course_ids[index][0][0]" placeholder="Yr" style="width: 22%;">
+                                <input type="number" v-model.number="setitem.course_ids[index][0][1]" placeholder="Sm" style="width: 18%;">
+                                <input type="text" v-model="setitem.course_ids[index][1]" placeholder="Course ID" style="flex: 1;">
+                                <button class="btn-delete" @click="setitem.course_ids.splice(index, 1)">Del</button>
                             </div>
                         </div>
                     </template>
-                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px;">
-                        暂无课程
+                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px; font-style: italic;">
+                        No courses enrolled.
                     </div>
-                    <button 
-                        class="btn-add" 
-                        @click="setitem.course_ids ? setitem.course_ids.push([[1, 1], '']) : setitem.course_ids = [[[1, 1], '']]"
-                        type="button"
-                    >+ 添加课程</button>
+                    <button class="btn-add" @click="setitem.course_ids ? setitem.course_ids.push([[1, 1], '']) : setitem.course_ids = [[[1, 1], '']]">+ Add Course</button>
                 </div>
 
                 <div class="form-group">
-                    <label>课程成绩列表 (课程ID: [分数, 学分, GPA])</label>
+                    <label>Grades (Score, Credit, GPA)</label>
+                    <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">
+                        * Scores are linked to Course IDs above. Add a course first to edit its score.
+                    </div>
+                    
                     <template v-if="setitem.course_scores && Object.keys(setitem.course_scores).length > 0">
                         <div v-for="(scoreData, courseId) in setitem.course_scores" :key="courseId" class="array-item">
                             <div class="array-row">
-                                <span style="width: 22%; padding: 8px; background: #f0f0f0; border-radius: 4px; font-size: 13px; display: inline-block;">{{ courseId }}</span>
-                                <input type="number" v-model.number="setitem.course_scores[courseId][0]" placeholder="分数" style="width: 20%;">
-                                <input type="number" v-model.number="setitem.course_scores[courseId][1]" placeholder="学分" style="width: 20%;" disabled>
-                                <input type="number" v-model.number="setitem.course_scores[courseId][2]" placeholder="GPA" step="0.1" style="width: 20%;" disabled>
-                                <button 
-                                    class="btn-delete" 
-                                    @click="delete setitem.course_scores[courseId]"
-                                    type="button"
-                                >删除</button>
+                                <span style="width: 20%; padding: 8px; background: #e5e7eb; border-radius: 4px; font-size: 12px; font-weight: 600; text-align: center; overflow: hidden; text-overflow: ellipsis;">
+                                    {{ courseId }}
+                                </span>
+                                <input type="number" v-model.number="setitem.course_scores[courseId][0]" placeholder="Score" style="width: 20%;" title="Score">
+                                <input type="number" v-model.number="setitem.course_scores[courseId][1]" placeholder="Cr" style="width: 15%; background: #f3f4f6;" disabled title="Credit">
+                                <input type="number" v-model.number="setitem.course_scores[courseId][2]" placeholder="GPA" step="0.1" style="width: 15%; background: #f3f4f6;" disabled title="GPA">
+                                <button class="btn-delete" @click="delete setitem.course_scores[courseId]">Del</button>
                             </div>
                         </div>
                     </template>
-                    <div v-else style="color: #999; font-size: 13px;">
-                        暂无成绩（添加课程后自动生成）
+                    <div v-else style="color: #999; font-size: 13px; margin-bottom: 10px; font-style: italic;">
+                        No grades data available.
                     </div>
                 </div>
                 
-                <button class="btn-primary" @click="StudentSet()">
-                    保存修改
-                </button>
+                <button class="btn-primary" @click="StudentSet()">Save Changes</button>
             </div>
         </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 
 </body>
 </html>

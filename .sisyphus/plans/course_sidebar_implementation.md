@@ -5,7 +5,7 @@
 
 ## 背景分析
 - **后端**: C++ 层已实现 `/api/Set/Course` 接口
-- **JS 逻辑**: `script.js` 中已有 `CourseSet()` 方法和 `setitem`, `setType`, `setQuery` 变量
+- **JS 逻辑**: `script.js` 中已有 `CourseSet()` 方法和 `setitem`, `setType`, `setQuery` **变量**
 - **现状**: 仅需修改 HTML 和 CSS，激活已有的修改功能
 
 ## 当前代码状态

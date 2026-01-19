@@ -29,13 +29,13 @@ public:
     Course(const nlohmann::json& data);
     ~Course();
 
-    std::string Get_ID();
-    std::string Get_Teacher();
-    int Get_Credit();
-    std::string Get_ClassName();
-    float Get_GPA();
-    std::pair<int,int> Get_Semester();
-    std::vector<std::pair<std::string,std::string>> Get_Tls();
+    std::string Get_ID() const;
+    std::string Get_Teacher() const;
+    int Get_Credit() const;
+    std::string Get_ClassName() const;
+    float Get_GPA() const;
+    std::pair<int,int> Get_Semester() const;
+    std::vector<std::pair<std::string,std::string>> Get_Tls() const;
 
     void Set_ClassName(const std::string& str);
     void Set_ID(const int& newID);
@@ -46,6 +46,7 @@ public:
 
     void ImportCourse(const nlohmann::json& data);
     nlohmann::json ExportCourse_to_simplejson();
+    friend void to_json(nlohmann::json& j, const Course& c);
     void ImportTls();
     void ExportTls();
     

@@ -1,31 +1,31 @@
 [
 {
   "directory": "/home/lucious/Code/StorageRoom/Template/build",
-  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all -g -o CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp",
   "file": "/home/lucious/Code/StorageRoom/Template/src/lib/college.cpp",
   "output": "CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o"
 },
 {
   "directory": "/home/lucious/Code/StorageRoom/Template/build",
-  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all -g -o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp",
   "file": "/home/lucious/Code/StorageRoom/Template/src/lib/course.cpp",
   "output": "CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o"
 },
 {
   "directory": "/home/lucious/Code/StorageRoom/Template/build",
-  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all -g -o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp",
   "file": "/home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp",
   "output": "CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o"
 },
 {
   "directory": "/home/lucious/Code/StorageRoom/Template/build",
-  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -g -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all -g -o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o -c /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp",
   "file": "/home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp",
   "output": "CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o"
 },
 {
   "directory": "/home/lucious/Code/StorageRoom/Template/build",
-  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -g -o CMakeFiles/HelloWorld.dir/helloworld.cpp.o -c /home/lucious/Code/StorageRoom/Template/helloworld.cpp",
+  "command": "/usr/bin/clang++ -DPROJECT_ROOT_DIR=\\\"/home/lucious/Code/StorageRoom/Template\\\" -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all -g -o CMakeFiles/HelloWorld.dir/helloworld.cpp.o -c /home/lucious/Code/StorageRoom/Template/helloworld.cpp",
   "file": "/home/lucious/Code/StorageRoom/Template/helloworld.cpp",
   "output": "CMakeFiles/HelloWorld.dir/helloworld.cpp.o"
 }

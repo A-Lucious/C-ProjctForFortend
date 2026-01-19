@@ -3,13 +3,13 @@
 Mankind::Mankind() {};
 Mankind::~Mankind() {};
 
-std::string Mankind::Get_Name() {
+std::string Mankind::Get_Name() const {
     return name;
 }
-int Mankind::Get_Age() {
+int Mankind::Get_Age() const {
     return age;
 }
-std::string Mankind::Get_Sex() {
+std::string Mankind::Get_Sex() const {
     return sex;
 }
 void Mankind::Set_Name(const std::string& newName) {
@@ -22,8 +22,26 @@ void Mankind::Set_Sex(const std::string& newSex) {
     sex = newSex;
 }
 
+Mankind& Mankind::operator=(const Mankind& other) {
+    if (this != &other) {
+        this->name = other.name;
+        this->sex = other.sex;
+        this->age = other.age;
+    }
+    return *this;
+}
+
 Teacher::Teacher() {};
 Teacher::~Teacher() {};
+
+Teacher& Teacher::operator=(const Teacher& other) {
+    if (this != &other) {
+        this->name = other.name;
+        this->sex = other.sex;
+        this->age = other.age;
+    }
+    return *this;
+}
 
 Student::Student() {};
 Student::Student(const nlohmann::json& data, std::map<std::string,Course>& Courses) {
@@ -31,37 +49,37 @@ Student::Student(const nlohmann::json& data, std::map<std::string,Course>& Cours
 };
 Student::~Student() {};
 
-std::string Student::Get_StuNum() {
+std::string Student::Get_StuNum() const {
     return stunum;
 }
-std::string Student::Get_NetId() {
+std::string Student::Get_NetId() const {
     return net_id;
 }
-int Student::Get_GradeClass() {
+int Student::Get_GradeClass() const {
     return grade_class;
 }
-std::string Student::Get_CollegeName() {
+std::string Student::Get_CollegeName() const {
     return college_name;
 }
-std::string Student::Get_Password() {
+std::string Student::Get_Password() const {
     return password;
 }
-int Student::Get_Ass() {
+int Student::Get_Ass() const {
     return ass;
 }
-int Student::Get_NeedCredit() {
+int Student::Get_NeedCredit() const {
     return needcredit;
 }
-int Student::Get_MaxGPA() {
+int Student::Get_MaxGPA() const {
     return maxGPA;
 }
-int Student::Get_CurrentCredit() {
+int Student::Get_CurrentCredit() const {
     return current_credit;
 }
-std::map<std::pair<int,int> ,float> Student::Get_CurrentGPA() {
+std::map<std::pair<int,int> ,float> Student::Get_CurrentGPA() const {
     return current_GPA;
 }
-float Student::Get_MeanGPA() {
+float Student::Get_MeanGPA() const {
     float meanGPA = 0.0;
     int n = 0;
     for(const auto&g:current_GPA) {
@@ -70,20 +88,20 @@ float Student::Get_MeanGPA() {
     }
     return meanGPA/n;
 }
-std::pair<std::string,std::string> Student::Get_Been() {
+std::pair<std::string,std::string> Student::Get_Been() const {
     return been;
 }
-std::pair<int,int> Student::Get_CurrentSemester() {
+std::pair<int,int> Student::Get_CurrentSemester() const {
     return current_semester;
 }
-std::list<std::pair<std::pair<int,int>,std::string>> Student::Get_CourseIds() {
+std::list<std::pair<std::pair<int,int>,std::string>> Student::Get_CourseIds() const {
     return course_ids;
 }
-std::map<std::string,std::array<float,3>> Student::Get_ScoresCredit() {
+std::map<std::string,std::array<float,3>> Student::Get_ScoresCredit() const {
     return scores_credit_GPA;
 }
-std::array<float,3> Student::Get_OneScoresCredit(std::string course_id) {
-    return scores_credit_GPA[course_id];
+std::array<float,3> Student::Get_OneScoresCredit(std::string course_id) const {
+    return scores_credit_GPA.at(course_id);
 }
 void Student::Set_NetId(const std::string& newid) {
     net_id = newid;
@@ -221,4 +239,47 @@ nlohmann::json Student::ExportStudent_to_simplejson() {
     nj["erldt"] = been.first;
     nj["gdtdt"] = been.second;
     return nj;
+}
+
+void to_json(nlohmann::json& j, const Student& s) {
+    j["name"] = s.Get_Name();
+    j["age"] = s.Get_Age();
+    j["sex"] = s.Get_Sex();
+    j["stunum"] = s.Get_StuNum();
+    j["net_id"] = s.Get_NetId();
+    j["grade_class"] = s.Get_GradeClass();
+    j["college_name"] = s.Get_CollegeName();
+    j["password"] = s.Get_Password();
+    j["needcredit"] = s.Get_NeedCredit();
+    j["maxGPA"] = s.Get_MaxGPA();
+    j["been"] = {s.Get_Been().first,s.Get_Been().second};
+    j["course_ids"] = s.Get_CourseIds();
+    for (auto& [key, value] : s.Get_ScoresCredit()) {
+        j["course_scores"].push_back({key,value[0]});
+    }
+    j["current_semester"] = s.Get_CurrentSemester();
+
+};
+
+Student& Student::operator=(const Student& other) {
+    if (this != &other) {
+        this->name = other.name;
+        this->stunum = other.stunum;
+        this->net_id = other.net_id;
+        this->password = other.password;
+        this->needcredit = other.needcredit;
+        this->maxGPA = other.maxGPA;
+        this->been = other.been;
+        this->course_ids = other.course_ids;
+        this->scores_credit_GPA = other.scores_credit_GPA;
+        this->current_semester = other.current_semester;
+        this->current_credit = other.current_credit;
+        this->current_GPA = other.current_GPA;
+        this->sex = other.sex;
+        this->age = other.age;
+        this->college_name = other.college_name;
+        this->grade_class = other.grade_class;
+        this->ass = other.ass;
+    }
+    return *this;
 }

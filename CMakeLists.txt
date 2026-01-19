@@ -14,7 +14,8 @@ add_library(MyPrivLib STATIC ${LIB_SRCS})
 target_include_directories(MyPrivLib PUBLIC 
                             src/lib 
                             include 
-                            include/json/single_include)
+                            include/json/single_include
+                            include/crow_all)
 
 aux_source_directory(. DIR_SRCS)
 add_executable(HelloWorld ${DIR_SRCS} )

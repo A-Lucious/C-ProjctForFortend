@@ -1,4 +1,4 @@
-#include <crow.h>
+#include "crow_all.h"
 #include <nlohmann/json.hpp>
 #include <college.h>
 #include <course.h>
@@ -189,6 +189,34 @@ int main() {
         std::cout << item << std::endl;
         c1.SetStudent(item);
         c1.ReFresh(item);
+        crow::response res(200);
+        return res;
+    });
+
+    //import
+    CROW_ROUTE(app,"/api/import").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
+        std::string type = req.url_params.get("type");
+        std::string pos = req.url_params.get("pos");
+        if (type == "course") {
+            c1.ImportCourses(("./Example/" + pos).c_str());
+        }else if(type == "student") {
+            c1.ImportStudents(("./Example/" + pos).c_str());
+        }
+        crow::response res(200);
+        return res;
+    });
+
+    //export
+    CROW_ROUTE(app,"/api/export_courses").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
+        std::string pos = req.url_params.get("pos");
+        c1.ExportCourses(pos);
+        crow::response res(200);
+        return res;
+    });
+
+    CROW_ROUTE(app,"/api/export_students").methods(crow::HTTPMethod::GET)([&c1](const crow::request& req){
+        std::string pos = req.url_params.get("pos");
+        c1.ExportStudents(pos);
         crow::response res(200);
         return res;
     });

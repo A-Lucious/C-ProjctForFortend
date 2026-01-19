@@ -20,9 +20,9 @@
 class College {
 private:
 public:
-    std::map<std::string,Course> Courses;
-    std::map<std::string,Student> StudentRoll;
-    std::map<std::string,Teacher> TeacherRoll;
+    std::map<std::string,Course>* Courses;
+    std::map<std::string,Student>* StudentRoll;
+    std::map<std::string,Teacher>* TeacherRoll;
     College();
     ~College();
 
@@ -39,14 +39,15 @@ public:
 
     void ImportCourses(const std::string& path);
     void ImportStudents(const std::string& path);
-    void ImportTeachers();
+    void ImportTeachers(const std::string& path);
 
     nlohmann::json ExportCourses_jsonsimple(); // export the info json
     nlohmann::json ExportStudents_jsonsimple();
     nlohmann::json ExportCourse_josn(const std::string& id);
     nlohmann::json ExportStudent_json(const std::string& id);
-    void ExportStudents();
-    void ExportTeachers();
+    void ExportCourses(const std::string& path);
+    void ExportStudents(const std::string& path);
+    void ExportTeachers(const std::string& path);
 
     nlohmann::json SortCourses(const nlohmann::json& js, const std::string& type);
     nlohmann::json SortStudent(const nlohmann::json& js, const std::string& type);

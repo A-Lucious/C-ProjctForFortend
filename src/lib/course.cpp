@@ -7,25 +7,25 @@ Course::Course(const nlohmann::json& data) {
 Course::Course() {};
 Course::~Course() {};
 
-std::string Course::Get_ID() {
+std::string Course::Get_ID() const{
     return id;
 }
-std::string Course::Get_Teacher() {
+std::string Course::Get_Teacher() const{
     return teacher;
 }
-int Course::Get_Credit() {
+int Course::Get_Credit() const{
     return credit;
 }
-std::string Course::Get_ClassName() {
+std::string Course::Get_ClassName() const{
     return class_name;
 }
-float Course::Get_GPA() {
+float Course::Get_GPA() const{
     return GPA;
 }
-std::pair<int,int> Course::Get_Semester() {
+std::pair<int,int> Course::Get_Semester() const{
     return semester;
 }
-std::vector<std::pair<std::string,std::string>> Course::Get_Tls() {
+std::vector<std::pair<std::string,std::string>> Course::Get_Tls() const{
     return tls;
 }
 
@@ -75,6 +75,16 @@ nlohmann::json Course::ExportCourse_to_simplejson() { // export the simple info
     nj["classname"] = class_name;
     nj["semester"] = semester;
     return nj;
+}
+
+void to_json(nlohmann::json& j, const Course& c) {
+    j["id"] = c.Get_ID();
+    j["teacherid"] = c.Get_Teacher();
+    j["credit"] = c.Get_Credit();
+    j["classname"] = c.Get_ClassName();
+    j["semester"] = c.Get_Semester();
+    j["GPA"] = c.Get_GPA();
+    j["tls"] = c.Get_Tls();
 }
 
 Course& Course::operator=(const Course& other) {

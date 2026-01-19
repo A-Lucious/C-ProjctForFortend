@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = -DPROJECT_ROOT_DIR=\"/home/lucious/Code/StorageRoom/Template\"
 
-CXX_INCLUDES = -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include
+CXX_INCLUDES = -I/home/lucious/Code/StorageRoom/Template/src/lib -I/home/lucious/Code/StorageRoom/Template/include -I/home/lucious/Code/StorageRoom/Template/include/json/single_include -I/home/lucious/Code/StorageRoom/Template/include/crow_all
 
 CXX_FLAGS = -g
 

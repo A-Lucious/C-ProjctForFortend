@@ -296,21 +296,8 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_numeric.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/pstl/glue_numeric_defs.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/any \
-  /usr/local/include/crow.h /usr/local/include/crow/query_string.h \
-  /usr/local/include/crow/http_parser_merged.h \
-  /usr/lib/clang/21/include/limits.h /usr/include/limits.h \
-  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
-  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
-  /usr/include/bits/xopen_lim.h /usr/include/bits/uio_lim.h \
-  /usr/local/include/crow/common.h /usr/local/include/crow/utility.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/random \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/random.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/random.tcc \
-  /usr/local/include/crow/settings.h /usr/local/include/crow/ci_map.h \
-  /usr/local/include/crow/TinySHA1.hpp \
-  /usr/local/include/crow/socket_adaptors.h /usr/include/asio.hpp \
-  /usr/include/asio/any_completion_executor.hpp \
+  /home/lucious/Code/StorageRoom/Template/include/crow_all.h \
+  /usr/include/asio.hpp /usr/include/asio/any_completion_executor.hpp \
   /usr/include/asio/detail/config.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/experimental/string_view \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/variant \
@@ -343,6 +330,10 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
   /usr/include/asio/detail/recycling_allocator.hpp \
   /usr/include/asio/detail/thread_context.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/climits \
+  /usr/lib/clang/21/include/limits.h /usr/include/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h /usr/include/bits/uio_lim.h \
   /usr/include/asio/detail/call_stack.hpp \
   /usr/include/asio/detail/noncopyable.hpp \
   /usr/include/asio/detail/tss_ptr.hpp \
@@ -760,32 +751,26 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o: \
   /usr/include/asio/windows/stream_handle.hpp \
   /usr/include/asio/writable_pipe.hpp /usr/include/asio/write_at.hpp \
   /usr/include/asio/impl/write_at.hpp \
-  /usr/local/include/crow/socket_acceptors.h \
-  /usr/local/include/crow/logging.h /usr/local/include/crow/json.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/random \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/random.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/random.tcc \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/cfloat \
-  /usr/lib/clang/21/include/float.h /usr/local/include/crow/returnable.h \
-  /usr/local/include/crow/mustache.h \
-  /usr/local/include/crow/task_timer.h \
-  /usr/local/include/crow/http_request.h \
-  /usr/local/include/crow/websocket.h \
+  /usr/lib/clang/21/include/float.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/charconv \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/unordered_set \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/unordered_set.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/set \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_set.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_multiset.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/queue \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/deque \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_deque.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/deque.tcc \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_queue.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/thread \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/this_thread_sleep.h \
-  /usr/local/include/crow/http_response.h \
-  /usr/local/include/crow/mime_types.h /usr/local/include/crow/parser.h \
-  /usr/local/include/crow/multipart.h \
-  /usr/local/include/crow/exceptions.h \
-  /usr/local/include/crow/multipart_view.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/charconv \
-  /usr/local/include/crow/routing.h /usr/local/include/crow/middleware.h \
-  /usr/local/include/crow/middleware_context.h \
-  /usr/local/include/crow/compression.h \
-  /usr/local/include/crow/http_connection.h \
-  /usr/local/include/crow/http_server.h \
-  /usr/local/include/crow/version.h /usr/local/include/crow/app.h \
   /home/lucious/Code/StorageRoom/Template/src/lib/course.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/list \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_list.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/list.tcc \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/set \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_set.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_multiset.h
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/list.tcc

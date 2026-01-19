@@ -3,6 +3,7 @@
 
 CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /home/lucious/Code/StorageRoom/Template/src/lib/college.cpp
+ /home/lucious/Code/StorageRoom/Template/include/crow_all.h
  /home/lucious/Code/StorageRoom/Template/include/json/single_include/nlohmann/json.hpp
  /home/lucious/Code/StorageRoom/Template/src/lib/college.h
  /home/lucious/Code/StorageRoom/Template/src/lib/course.h
@@ -35,6 +36,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/bits/cpp_type_traits.h
  /usr/include/c++/15.2.1/bits/cxxabi_forced.h
  /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h
+ /usr/include/c++/15.2.1/bits/deque.tcc
  /usr/include/c++/15.2.1/bits/enable_special_members.h
  /usr/include/c++/15.2.1/bits/erase_if.h
  /usr/include/c++/15.2.1/bits/exception.h
@@ -102,6 +104,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/bits/stl_algobase.h
  /usr/include/c++/15.2.1/bits/stl_bvector.h
  /usr/include/c++/15.2.1/bits/stl_construct.h
+ /usr/include/c++/15.2.1/bits/stl_deque.h
  /usr/include/c++/15.2.1/bits/stl_function.h
  /usr/include/c++/15.2.1/bits/stl_heap.h
  /usr/include/c++/15.2.1/bits/stl_iterator.h
@@ -113,6 +116,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/bits/stl_multiset.h
  /usr/include/c++/15.2.1/bits/stl_numeric.h
  /usr/include/c++/15.2.1/bits/stl_pair.h
+ /usr/include/c++/15.2.1/bits/stl_queue.h
  /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h
  /usr/include/c++/15.2.1/bits/stl_relops.h
  /usr/include/c++/15.2.1/bits/stl_set.h
@@ -130,6 +134,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/bits/unique_lock.h
  /usr/include/c++/15.2.1/bits/unique_ptr.h
  /usr/include/c++/15.2.1/bits/unordered_map.h
+ /usr/include/c++/15.2.1/bits/unordered_set.h
  /usr/include/c++/15.2.1/bits/uses_allocator.h
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h
  /usr/include/c++/15.2.1/bits/utility.h
@@ -163,6 +168,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/cwctype
  /usr/include/c++/15.2.1/debug/assertions.h
  /usr/include/c++/15.2.1/debug/debug.h
+ /usr/include/c++/15.2.1/deque
  /usr/include/c++/15.2.1/exception
  /usr/include/c++/15.2.1/experimental/string_view
  /usr/include/c++/15.2.1/ext/aligned_buffer.h
@@ -199,6 +205,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/pstl/glue_memory_defs.h
  /usr/include/c++/15.2.1/pstl/glue_numeric_defs.h
  /usr/include/c++/15.2.1/pstl/pstl_config.h
+ /usr/include/c++/15.2.1/queue
  /usr/include/c++/15.2.1/random
  /usr/include/c++/15.2.1/ratio
  /usr/include/c++/15.2.1/set
@@ -225,6 +232,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/include/c++/15.2.1/type_traits
  /usr/include/c++/15.2.1/typeinfo
  /usr/include/c++/15.2.1/unordered_map
+ /usr/include/c++/15.2.1/unordered_set
  /usr/include/c++/15.2.1/utility
  /usr/include/c++/15.2.1/valarray
  /usr/include/c++/15.2.1/variant
@@ -905,37 +913,6 @@ CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o
  /usr/lib/clang/21/include/stdarg.h
  /usr/lib/clang/21/include/stddef.h
  /usr/lib/clang/21/include/stdint.h
- /usr/local/include/crow.h
- /usr/local/include/crow/TinySHA1.hpp
- /usr/local/include/crow/app.h
- /usr/local/include/crow/ci_map.h
- /usr/local/include/crow/common.h
- /usr/local/include/crow/compression.h
- /usr/local/include/crow/exceptions.h
- /usr/local/include/crow/http_connection.h
- /usr/local/include/crow/http_parser_merged.h
- /usr/local/include/crow/http_request.h
- /usr/local/include/crow/http_response.h
- /usr/local/include/crow/http_server.h
- /usr/local/include/crow/json.h
- /usr/local/include/crow/logging.h
- /usr/local/include/crow/middleware.h
- /usr/local/include/crow/middleware_context.h
- /usr/local/include/crow/mime_types.h
- /usr/local/include/crow/multipart.h
- /usr/local/include/crow/multipart_view.h
- /usr/local/include/crow/mustache.h
- /usr/local/include/crow/parser.h
- /usr/local/include/crow/query_string.h
- /usr/local/include/crow/returnable.h
- /usr/local/include/crow/routing.h
- /usr/local/include/crow/settings.h
- /usr/local/include/crow/socket_acceptors.h
- /usr/local/include/crow/socket_adaptors.h
- /usr/local/include/crow/task_timer.h
- /usr/local/include/crow/utility.h
- /usr/local/include/crow/version.h
- /usr/local/include/crow/websocket.h
 
 CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o
  /home/lucious/Code/StorageRoom/Template/src/lib/course.cpp
@@ -1289,6 +1266,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o
 
 CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /home/lucious/Code/StorageRoom/Template/src/lib/functions.cpp
+ /home/lucious/Code/StorageRoom/Template/include/crow_all.h
  /home/lucious/Code/StorageRoom/Template/include/json/single_include/nlohmann/json.hpp
  /home/lucious/Code/StorageRoom/Template/src/lib/course.h
  /home/lucious/Code/StorageRoom/Template/src/lib/functions.h
@@ -1319,6 +1297,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/bits/cpp_type_traits.h
  /usr/include/c++/15.2.1/bits/cxxabi_forced.h
  /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h
+ /usr/include/c++/15.2.1/bits/deque.tcc
  /usr/include/c++/15.2.1/bits/enable_special_members.h
  /usr/include/c++/15.2.1/bits/erase_if.h
  /usr/include/c++/15.2.1/bits/exception.h
@@ -1386,6 +1365,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/bits/stl_algobase.h
  /usr/include/c++/15.2.1/bits/stl_bvector.h
  /usr/include/c++/15.2.1/bits/stl_construct.h
+ /usr/include/c++/15.2.1/bits/stl_deque.h
  /usr/include/c++/15.2.1/bits/stl_function.h
  /usr/include/c++/15.2.1/bits/stl_heap.h
  /usr/include/c++/15.2.1/bits/stl_iterator.h
@@ -1397,6 +1377,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/bits/stl_multiset.h
  /usr/include/c++/15.2.1/bits/stl_numeric.h
  /usr/include/c++/15.2.1/bits/stl_pair.h
+ /usr/include/c++/15.2.1/bits/stl_queue.h
  /usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h
  /usr/include/c++/15.2.1/bits/stl_relops.h
  /usr/include/c++/15.2.1/bits/stl_set.h
@@ -1414,6 +1395,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/bits/unique_lock.h
  /usr/include/c++/15.2.1/bits/unique_ptr.h
  /usr/include/c++/15.2.1/bits/unordered_map.h
+ /usr/include/c++/15.2.1/bits/unordered_set.h
  /usr/include/c++/15.2.1/bits/uses_allocator.h
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h
  /usr/include/c++/15.2.1/bits/utility.h
@@ -1447,6 +1429,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/cwctype
  /usr/include/c++/15.2.1/debug/assertions.h
  /usr/include/c++/15.2.1/debug/debug.h
+ /usr/include/c++/15.2.1/deque
  /usr/include/c++/15.2.1/exception
  /usr/include/c++/15.2.1/experimental/string_view
  /usr/include/c++/15.2.1/ext/aligned_buffer.h
@@ -1483,6 +1466,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/pstl/glue_memory_defs.h
  /usr/include/c++/15.2.1/pstl/glue_numeric_defs.h
  /usr/include/c++/15.2.1/pstl/pstl_config.h
+ /usr/include/c++/15.2.1/queue
  /usr/include/c++/15.2.1/random
  /usr/include/c++/15.2.1/ratio
  /usr/include/c++/15.2.1/set
@@ -1509,6 +1493,7 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/include/c++/15.2.1/type_traits
  /usr/include/c++/15.2.1/typeinfo
  /usr/include/c++/15.2.1/unordered_map
+ /usr/include/c++/15.2.1/unordered_set
  /usr/include/c++/15.2.1/utility
  /usr/include/c++/15.2.1/valarray
  /usr/include/c++/15.2.1/variant
@@ -2189,37 +2174,6 @@ CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o
  /usr/lib/clang/21/include/stdarg.h
  /usr/lib/clang/21/include/stddef.h
  /usr/lib/clang/21/include/stdint.h
- /usr/local/include/crow.h
- /usr/local/include/crow/TinySHA1.hpp
- /usr/local/include/crow/app.h
- /usr/local/include/crow/ci_map.h
- /usr/local/include/crow/common.h
- /usr/local/include/crow/compression.h
- /usr/local/include/crow/exceptions.h
- /usr/local/include/crow/http_connection.h
- /usr/local/include/crow/http_parser_merged.h
- /usr/local/include/crow/http_request.h
- /usr/local/include/crow/http_response.h
- /usr/local/include/crow/http_server.h
- /usr/local/include/crow/json.h
- /usr/local/include/crow/logging.h
- /usr/local/include/crow/middleware.h
- /usr/local/include/crow/middleware_context.h
- /usr/local/include/crow/mime_types.h
- /usr/local/include/crow/multipart.h
- /usr/local/include/crow/multipart_view.h
- /usr/local/include/crow/mustache.h
- /usr/local/include/crow/parser.h
- /usr/local/include/crow/query_string.h
- /usr/local/include/crow/returnable.h
- /usr/local/include/crow/routing.h
- /usr/local/include/crow/settings.h
- /usr/local/include/crow/socket_acceptors.h
- /usr/local/include/crow/socket_adaptors.h
- /usr/local/include/crow/task_timer.h
- /usr/local/include/crow/utility.h
- /usr/local/include/crow/version.h
- /usr/local/include/crow/websocket.h
 
 CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o
  /home/lucious/Code/StorageRoom/Template/src/lib/mankind.cpp

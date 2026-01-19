@@ -23,13 +23,15 @@ public:
     Mankind();
     virtual ~Mankind();
 
-    std::string Get_Name();
-    int Get_Age();
-    std::string Get_Sex();
+    std::string Get_Name() const;
+    int Get_Age() const;
+    std::string Get_Sex() const;
 
     void Set_Name(const std::string& newName);
     void Set_Age(const int& newAge);
     void Set_Sex(const std::string& newSex);
+
+    Mankind& operator=(const Mankind& other);
 };
 
 class Teacher : public Mankind {
@@ -41,6 +43,8 @@ public:
     
     Teacher();
     ~Teacher();
+
+    Teacher& operator=(const Teacher& other);
 };
 
 class Student : public Mankind {
@@ -66,22 +70,22 @@ public:
     int current_credit; //当前学分
     std::map<std::pair<int,int> ,float> current_GPA;  //每学期绩点
     
-    std::string Get_StuNum();
-    std::string Get_NetId();
-    int Get_GradeClass();
-    std::string Get_CollegeName();
-    std::string Get_Password();
-    int Get_Ass();
-    int Get_NeedCredit();
-    int Get_MaxGPA();
-    int Get_CurrentCredit();
-    std::map<std::pair<int,int> ,float> Get_CurrentGPA();
-    float Get_MeanGPA();
-    std::pair<int,int> Get_CurrentSemester();
-    std::list<std::pair<std::pair<int,int>,std::string>> Get_CourseIds(); 
-    std::map<std::string,std::array<float,3>> Get_ScoresCredit();
-    std::array<float,3> Get_OneScoresCredit(std::string course_id);
-    std::pair<std::string,std::string> Get_Been();
+    std::string Get_StuNum() const;
+    std::string Get_NetId() const;
+    int Get_GradeClass() const;
+    std::string Get_CollegeName() const;
+    std::string Get_Password() const;
+    int Get_Ass() const;
+    int Get_NeedCredit() const;
+    int Get_MaxGPA() const;
+    int Get_CurrentCredit() const;
+    std::map<std::pair<int,int> ,float> Get_CurrentGPA() const;
+    float Get_MeanGPA() const;
+    std::pair<int,int> Get_CurrentSemester() const;
+    std::list<std::pair<std::pair<int,int>,std::string>> Get_CourseIds() const; 
+    std::map<std::string,std::array<float,3>> Get_ScoresCredit() const;
+    std::array<float,3> Get_OneScoresCredit(std::string course_id) const;
+    std::pair<std::string,std::string> Get_Been() const;
 
     void Set_StuNum(const std::string& num);
     void Set_Been(const std::string& be,const std::string& en);
@@ -101,6 +105,9 @@ public:
 
     void ImportStudent(const nlohmann::json& data, std::map<std::string,Course>& Courses);
     nlohmann::json ExportStudent_to_simplejson();
+    friend void to_json(nlohmann::json& j, const Student& s);
+
+    Student& operator=(const Student& other);
 };
 
 #endif

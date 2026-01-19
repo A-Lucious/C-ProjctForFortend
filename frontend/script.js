@@ -48,18 +48,32 @@ createApp({
 
             // Toast notifications
             toasts: [],
-            toastIdCounter: 0
+            toastIdCounter: 0,
+
+            //fro import
+            importType: null,
+
+            //for export
+            exportAddress: "",
         }
     },
     watch:{
         currentView(newVal,oldVal) {
-            if(newVal === 'calc') {
-                console.log("cut to courses page");
-                console.log(this.courselist);
+            console.log(`View switching: ${oldVal} -> ${newVal}`);
+            
+            this.courseEditOpen = false;
+            this.studentEditOpen = false;
+            this.stuisOpen = false;
+            
+            this.isOpen = false;
+            this.isSortOpen = false;
+            
+            this.setitem = null;
+            this.currentStudent = null;
+
+            if (newVal === 'calc') {
                 this.fetchCourses();
-            }else if (newVal === 'stus') {
-                console.log("cut to students page");
-                console.log(this.studentlist)
+            } else if (newVal === 'stus') {
                 this.fetchStudents();
             }
         },
@@ -263,6 +277,37 @@ createApp({
 
         closeDetail() {
             this.stuisOpen = false;
+        },
+
+        //import
+        triggerImport(type) {
+            this.importType = type;
+            this.$refs.fileInput.click();
+        },
+
+        async handleImportFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const response = await fetch(`/api/import?type=${this.importType}&pos=${file.name}`);
+            if (response.ok) {
+                console.log(`Imported ${this.importType}`);
+            }
+            this.fetchCourses();
+        },
+
+        //export
+        async exportCourses() {
+            const response = await fetch(`/api/export_courses?pos=${this.exportAddress}.json`);
+            alert("Exported Courses")
+            console.log("Exported Courses");
+            console.log(this.courselist);
+        },
+
+        async exportStudents() {
+            const response = await fetch(`/api/export_students?pos=${this.exportAddress}.json`);
+            alert("Exported Students");
+            console.log("Exported Students");
+            console.log(this.studentlist);
         },
 
         // 【核心修改】打开详情页方法
