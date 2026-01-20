@@ -1,4 +1,0 @@
-/home/lucious/Code/StorageRoom/Template/build/CMakeFiles/MyPrivLib.dir
-/home/lucious/Code/StorageRoom/Template/build/CMakeFiles/HelloWorld.dir
-/home/lucious/Code/StorageRoom/Template/build/CMakeFiles/edit_cache.dir
-/home/lucious/Code/StorageRoom/Template/build/CMakeFiles/rebuild_cache.dir

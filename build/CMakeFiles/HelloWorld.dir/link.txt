@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -Xlinker --dependency-file=CMakeFiles/HelloWorld.dir/link.d CMakeFiles/HelloWorld.dir/helloworld.cpp.o -o HelloWorld  libMyPrivLib.a -lsqlite3
