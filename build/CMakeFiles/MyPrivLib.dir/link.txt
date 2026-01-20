@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMyPrivLib.a CMakeFiles/MyPrivLib.dir/src/lib/college.cpp.o CMakeFiles/MyPrivLib.dir/src/lib/course.cpp.o CMakeFiles/MyPrivLib.dir/src/lib/functions.cpp.o CMakeFiles/MyPrivLib.dir/src/lib/mankind.cpp.o
+/usr/bin/ranlib libMyPrivLib.a

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/lucious/Code/StorageRoom/Template/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
